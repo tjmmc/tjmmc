@@ -1,0 +1,29 @@
+:root {
+    --main-bg-color: rgb(27, 26, 27); /* Black */
+    --main-text-color: rgb(255, 255, 255); /* White */
+    --main-accent-color: rgb(32, 32, 88); /* Blue */
+}
+
+
+
+html {
+    width: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+div {
+    color: unset;
+}
+
+#contentArea {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
+    padding: 20px;
+}
