@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <meta name="description" content="TJHSST Math Modeling Club">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Ysabeau+SC:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/main.js" defer></script>
+</head>
+<body>
+    <nav class="Nav">
+        <div class="Logo">
+            <a href="/"><img src="/static/images/TJMMC-Logo-Black.png" alt="TJ Math Modeling Club"></a>
+            <button class="navbar-toggle" id="js-navbar-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="Navlinks" id="js-navlinks">
+            <a href="/competition/" {% if page.nav == "competition" %}class="active"{% endif %}>competition</a>
+            <a href="/lectures/" {% if page.nav == "lectures" %}class="active"{% endif %}>lectures</a>
+            <a href="/matlab/" {% if page.nav == "matlab" %}class="active"{% endif %}>matlab</a>
+            <a href="/m2tj/" {% if page.nav == "m2tj" %}class="active"{% endif %}>m&sup2; tj</a>
+        </div>
+    </nav>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer class="Footer">
+        <div class="Footer-left">
+            <p>&copy; 2026 TJ Math Modeling Club</p>
+        </div>
+        <div class="Footer-right">
+            {% for item in site.data.footer %}
+            <a href="{{ item.link }}">{{ item.name }}</a>
+            {% endfor %}
+        </div>
+    </footer>
+</body>
+</html>

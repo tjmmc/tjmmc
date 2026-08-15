@@ -1,22 +1,43 @@
 ---
-layout: none
+layout: default
+title: TJ Math Modeling
 permalink: /
+nav: home
 ---
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../static/js/main.js"></script>
-    <link rel="icon" type="image/x-icon" href="../static/images/logo.ico">
-    <link rel="stylesheet" href="../static/css/styles.css">
-    <title>TJMMC</title>
-</head>
-<body>
-    <div id="contentArea">
-        <div>
-            Title?
-        </div>
-        <div>
-            Body?
-        </div>
+<div class="Hero">
+    <video class="bgimg" autoplay loop muted playsinline>
+        <source src="/static/media/Intro.mp4" type="video/mp4">
+    </video>
+    <div class="gradimg"></div>
+    <div class="Info">
+        <h1><i>Real</i> World Applications.</h1>
     </div>
-</body>
+</div>
+
+<section class="Intro">
+    <div class="Intro-text">
+        <h2>Math in competitions, they're focused on <span class="accent">tricks</span>.</h2>
+        <p>
+            Our club is focused on a different topic: <span class="accent">Math Modeling</span>.
+            We will teach you how to apply tons of unique techniques, some of which you might
+            not get to learn until senior year. We also compete in the annual Mathworks Math
+            Modeling (M3) challenge, a national competition with over
+            <span class="accent">$100,000</span> in prizes.
+        </p>
+    </div>
+    <div class="Intro-image">
+        <img src="/static/images/m3.jpg" alt="Our team at the M3 Challenge">
+    </div>
+</section>
+
+<section class="Leadership">
+    <h2 class="Heading">our officers.</h2>
+    <div class="Leaders">
+        {% for leader in site.data.officers %}
+        <div class="PockerCard">
+            <img src="{{ leader.image }}" alt="{{ leader.name }}">
+            <p>{{ leader.name }} / {{ leader.role }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
