@@ -1,1 +1,6 @@
 permalink: pretty
+exclude:
+  - OLD-website
+  - README.md
+  - LICENSE
+  - static/setup.md

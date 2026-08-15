@@ -1,29 +1,547 @@
 :root {
-    --main-bg-color: rgb(27, 26, 27); /* Black */
-    --main-text-color: rgb(255, 255, 255); /* White */
-    --main-accent-color: rgb(32, 32, 88); /* Blue */
+    --white: hsl(200, 43%, 99%);
+    --pale: #CDE8E5;
+    --light: #A7E6FF;
+    --med: #7AB2B2;
+    --dark: #03346E;
+    --black: #222831;
+    --link: #453F78;
+    --link-hover: #1B1A55;
+    --footer-text: rgba(183, 181, 151, 0.5);
 }
 
-
-
-html {
-    width: 100%;
+* {
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: var(--white);
+    color: var(--black);
+    font-family: "Roboto", sans-serif;
 }
 
-div {
-    color: unset;
+main {
+    display: block;
+    flex: 1 0 auto;
 }
 
-#contentArea {
-    box-sizing: border-box;
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link);
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+h1, h2, h3 {
+    font-family: "Barlow", sans-serif;
+}
+
+.accent {
+    text-decoration: underline;
+    text-decoration-color: var(--light);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 3px;
+}
+
+.Heading {
+    font-size: 2em;
+    font-weight: 500;
+    margin: 1em 0;
+    color: var(--dark);
+}
+
+/* ---------- Nav ---------- */
+
+.Nav {
+    display: flex;
+    align-items: center;
+    margin: 2em 7em;
+    background-color: var(--white);
+    font-family: "Montserrat", sans-serif;
+    z-index: 1;
+}
+
+.Nav .Logo a {
+    display: block;
+}
+
+.Nav .Logo img {
+    display: block;
+    height: 3.2em;
+    width: auto;
+}
+
+.Nav .navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.4em;
+    cursor: pointer;
+}
+
+.Nav .navbar-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin: 6px 0;
+    background-color: var(--black);
+    border-radius: 2px;
+}
+
+.Nav .Navlinks {
+    display: flex;
+    gap: 1.5vw;
+    margin-left: auto;
+    font-size: 1.3em;
+    text-transform: lowercase;
+}
+
+.Nav .Navlinks a {
+    color: var(--black);
+    font-weight: 500;
+}
+
+.Nav .Navlinks a:hover {
+    font-weight: 700;
+}
+
+.Nav .Navlinks a.active {
+    border-bottom: 5px solid var(--link);
+}
+
+/* ---------- Hero ---------- */
+
+.Hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    font-family: "Barlow", sans-serif;
+}
+
+.Hero .bgimg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.Hero .gradimg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+}
+
+.Hero .Info {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.Hero .Info h1 {
+    font-size: 7em;
+    font-weight: 600;
+}
+
+/* ---------- Home: intro section ---------- */
+
+.Intro {
+    display: flex;
+    align-items: center;
+    gap: 3em;
+    padding: 5em 10em;
+    background-color: #f1f5f9;
+}
+
+.Intro-text {
+    flex: 1;
+    font-size: 1.15em;
+}
+
+.Intro-text h2 {
+    font-size: 1.7em;
+    font-weight: 700;
+    margin-bottom: 0.8em;
+}
+
+.Intro-image {
+    flex: 2;
+    height: 50vh;
+    overflow: hidden;
+    border-radius: 0.5em;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.Intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------- Home: leadership ---------- */
+
+.Leadership {
+    margin: 0 5vw 10vh;
+}
+
+.Leaders {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+
+.PockerCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 16em;
+    margin: 1em;
+    background-image: repeating-linear-gradient(36deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) 1px, transparent 5px, transparent 5px);
+    transition: transform 200ms ease-in-out;
+}
+
+.PockerCard:hover {
+    transform: scale(1.1);
+}
+
+.PockerCard img {
+    width: 13em;
+    height: 13em;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+}
+
+.PockerCard p {
+    width: 100%;
+    margin-top: 0.6em;
+    text-align: center;
+    overflow-wrap: break-word;
+    color: var(--dark);
+}
+
+/* ---------- Competition ---------- */
+
+.Banner {
+    position: relative;
+    height: 30vh;
+    overflow: hidden;
+}
+
+.Banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Banner-title {
+    position: absolute;
+    inset: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.Banner-title h1 {
+    font-size: 5em;
+    font-weight: 700;
+    color: white;
+}
+
+.Blurbs {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin: 2em auto;
+    padding: 0 7vw;
+}
+
+.Blurb {
+    max-width: 24em;
+}
+
+.Blurb-icon {
+    width: 2.5em;
+    height: 2.5em;
+    margin-bottom: 0.5em;
+    color: var(--black);
+}
+
+.Blurb h2 {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+
+.Blurb p {
+    font-size: 1.05em;
+    line-height: 1.5;
+}
+
+.Pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+    margin: 2em auto 3em;
+}
+
+.Pill {
+    display: inline-block;
+    padding: 0.6em 1.4em;
+    background-color: var(--med);
+    color: white;
+    border-radius: 9999px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.Pill:hover {
+    background-color: var(--dark);
+    color: white;
+}
+
+/* ---------- Lectures ---------- */
+
+.Books {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.Box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33vh;
+    min-width: 25vw;
+    max-width: 25vw;
+    margin: 2em;
+    border-radius: 0.5em;
+    overflow: hidden;
+    transition: transform 200ms ease-in-out;
+}
+
+.Box:hover {
+    transform: translateY(-0.25em);
+}
+
+.Box .bgimg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
     height: 100%;
-    background: var(--main-bg-color);
-    color: var(--main-text-color);
-    padding: 20px;
+    object-fit: cover;
+    filter: blur(4px);
+}
+
+.Box:hover .bgimg {
+    filter: blur(2px);
+}
+
+.Box .radialBg {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.2) 1%, rgba(0, 0, 0, 0.2) 98%);
+}
+
+.Box:hover .radialBg {
+    background-image: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.17) 1%, rgba(0, 0, 0, 0.17) 98%);
+}
+
+.Box .Info {
+    position: relative;
+    margin: 0 2em;
+    padding: 0.4em 0.6em;
+    border-radius: 0.5em;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.4em;
+    font-weight: 500;
+    text-align: center;
+    color: var(--dark);
+    background-color: var(--pale);
+    opacity: 0.85;
+}
+
+.Box:hover .Info {
+    opacity: 0.95;
+}
+
+/* ---------- Text pages (MATLAB, M^2 TJ) ---------- */
+
+.Page {
+    max-width: 55em;
+    margin: 0 auto 4em;
+    padding: 0 2em;
+}
+
+.Page-title {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0.5em 0 0.3em;
+}
+
+.Page-lead {
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+
+.Page-body {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.Details {
+    font-size: 1.1em;
+    line-height: 2;
+    padding-left: 1.5em;
+}
+
+.Page .Books {
+    justify-content: flex-start;
+}
+
+.Page .Box {
+    margin: 1em 2em 1em 0;
+    min-width: 18em;
+    max-width: 18em;
+    height: 12em;
+}
+
+/* ---------- Footer ---------- */
+
+.Footer {
+    display: flex;
+    background-color: var(--black);
+    padding: 2.5em 2em 1.3em;
+    color: var(--footer-text);
+}
+
+.Footer-left {
+    width: 50%;
+}
+
+.Footer-right {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 2em;
+}
+
+.Footer a {
+    color: var(--footer-text);
+    font-weight: normal;
+}
+
+.Footer a:hover {
+    color: rgba(183, 181, 151, 0.9);
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 1200px) {
+    .Box {
+        min-width: 33vw;
+        max-width: 33vw;
+    }
+
+    .Box .Info {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 800px) {
+    .Nav {
+        display: block;
+        margin: 1.5em;
+    }
+
+    .Nav .Logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .Nav .navbar-toggle {
+        display: block;
+    }
+
+    .Nav .Navlinks {
+        display: none;
+    }
+
+    .Nav .Navlinks.open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        margin-top: 1em;
+    }
+
+    .Hero .Info h1 {
+        font-size: 3.5em;
+    }
+
+    .Intro {
+        flex-direction: column;
+        padding: 3em 1.5em;
+    }
+
+    .Intro-image {
+        width: 100%;
+        height: 35vh;
+    }
+
+    .Banner-title h1 {
+        font-size: 2.8em;
+    }
+
+    .Blurbs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Box,
+    .Page .Box {
+        min-width: 75vw;
+        max-width: 75vw;
+        margin: 1em;
+    }
+
+    .Footer {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .Footer-left,
+    .Footer-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
 }

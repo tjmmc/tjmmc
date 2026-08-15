@@ -1,0 +1,15 @@
+---
+layout: default
+title: Lectures | TJ Math Modeling
+permalink: /lectures/
+nav: lectures
+---
+<section class="Books">
+    {% for lecture in site.data.lectures %}
+    <a class="Box" href="{{ lecture.link }}">
+        <img class="bgimg" src="{{ lecture.image }}" alt="">
+        <div class="radialBg"></div>
+        <h2 class="Info">{{ lecture.name }}</h2>
+    </a>
+    {% endfor %}
+</section>

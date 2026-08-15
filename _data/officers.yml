@@ -1,0 +1,32 @@
+# Officer list shown on the home page.
+#
+# Every entry below is a placeholder. For each officer:
+#   - name:  put their name
+#   - role:  put their title
+#   - image: drop a photo into static/images/leadership/ and point to it,
+#            e.g. /static/images/leadership/firstname.jpg
+# Add or remove entries to match however many officers there are.
+- name: "[FILL: name]"
+  role: "[FILL: title]"
+  image: /static/images/leadership/placeholder.svg   # FILL: photo
+- name: "[FILL: name]"
+  role: "[FILL: title]"
+  image: /static/images/leadership/placeholder.svg   # FILL: photo
+- name: "[FILL: name]"
+  role: "[FILL: title]"
+  image: /static/images/leadership/placeholder.svg   # FILL: photo
+- name: "[FILL: name]"
+  role: "[FILL: title]"
+  image: /static/images/leadership/placeholder.svg   # FILL: photo
+- name: "[FILL: name]"
+  role: "[FILL: title]"
+  image: /static/images/leadership/placeholder.svg   # FILL: photo
+- name: "[FILL: name]"
+  role: "[FILL: title]"
+  image: /static/images/leadership/placeholder.svg   # FILL: photo
+- name: "[FILL: name]"
+  role: "[FILL: title]"
+  image: /static/images/leadership/placeholder.svg   # FILL: photo
+- name: "[FILL: name]"
+  role: "[FILL: title]"
+  image: /static/images/leadership/placeholder.svg   # FILL: photo

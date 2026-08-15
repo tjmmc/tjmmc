@@ -1,0 +1,65 @@
+# Lecture archive, newest first. Each entry becomes a card on /lectures/.
+# Thumbnails live in static/images/lectures/.
+- name: Sensitivity Analysis (2023-24)
+  link: "https://docs.google.com/presentation/d/1U5422VpZjllAZlYUBMof4YzfTNFT5BGN_IbcBsQJiUw/edit?usp=sharing"
+  image: /static/images/lectures/sensitivity2024.png
+- name: 2017 M3C Problem Walkthrough
+  link: "https://docs.google.com/presentation/d/18A6sCzjjeA3zk5YtAtbuhbo5utZ5XQ5E8mmShNxDKDo/edit?usp=sharing"
+  image: /static/images/lectures/walkthru.png
+- name: Markov Chains (2023-24)
+  link: "https://docs.google.com/presentation/d/1ft1YYTM3v1Au5ldLfuTbx9LOzCrqq6L42XEOCpaVZU0/edit?usp=sharing"
+  image: /static/images/lectures/markov2024.png
+- name: Scientific Writing & the M3C Paper
+  link: "https://docs.google.com/presentation/d/1-oc8R4Fo0Dxi7LMRKXRAaG7z2U6pYHi9JpjOZhL-F44/edit?usp=sharing"
+  image: /static/images/lectures/scientificwriting.png
+- name: Forecasting & Time Series
+  link: "https://docs.google.com/presentation/d/17xjHfqSiAN1pGokthW-6AoE5nMN40GmrbbTv28oaSZE/edit?usp=sharing"
+  image: /static/images/lectures/timeseries.png
+- name: Forecasting Challenge
+  link: "https://docs.google.com/presentation/d/1dV920WyXMoxT37Zcj3BRuJ3jiWIy64XqQzhJMVN7JsA/edit?usp=sharing"
+  image: /static/images/lectures/forecastingchallenge.png
+- name: Nonlinear Regression
+  link: "https://docs.google.com/presentation/d/1FejXvPjpkrNQ8O4PzBrroemhJJITaTcqne3bXBT7kYE/edit?usp=sharing"
+  image: /static/images/lectures/nonlinreg.png
+- name: 2023-24 Intro
+  link: "https://docs.google.com/presentation/d/1TZBk59DvEyQnRZUpKkvzigYYDIU75wEr-7WNpXvad-4/edit?usp=sharing"
+  image: /static/images/lectures/mmcintro23.jpeg   # FILL: original referenced 24intro.png which never existed in the repo; swap in a real screenshot if you have one
+- name: "Differential Equations: SIR Model & Pandemics"
+  link: "https://docs.google.com/presentation/d/1OClfpoIL3TSmETTdGEJ2C5rMSYYoU-gCPs-2_RkbVrw/edit?usp=sharing"
+  image: /static/images/lectures/diffeqsir.png
+- name: Monte Carlo Methods
+  link: "https://docs.google.com/presentation/d/1iyOUg-xvWYEjRJMxh0RgYDZ7tohIl1hdQcbbeED2k2A/edit?usp=sharing"
+  image: /static/images/lectures/montecarlo.png
+- name: Sensitivity Analysis
+  link: "https://docs.google.com/presentation/d/1VBxxj7NOYZr62DKj161j1SJs746laDZpIiiruwH_sh4/edit?usp=sharing"
+  image: /static/images/lectures/sensitivityanalysis.png
+- name: Markov Chains & Least Squares Review
+  link: "https://docs.google.com/presentation/d/1g5lYR-Q6XQeVmooo46wkdhPjouSsXdIULljoFUscg-o/edit?usp=sharing"
+  image: /static/images/lectures/markovandleastsquares.png
+- name: Quantitative modeling & analysis in neuroscience - Dr. Hadjiabadi
+  link: "https://docs.google.com/presentation/d/1jtigBeRvV3ikODBrhsdmrkQcD2mpOVv6/edit?usp=sharing&ouid=109405827646590862193&rtpof=true&sd=true"
+  image: /static/images/lectures/neuro.png
+- name: Importing & Processing Data on MATLAB
+  link: "https://docs.google.com/presentation/d/1wQUdL8yXE7yK1QzVq1LzAKCVB00koCR0j-lib5i3F84/edit?usp=sharing"
+  image: /static/images/lectures/matlabimport.png
+- name: Markov Chains
+  link: "https://docs.google.com/presentation/d/1XMIAtEV0Jn8kSbnMjy-vh2_U_dNl173rH0eW1USgSg4/edit?usp=sharing"
+  image: /static/images/lectures/linmat4.png
+- name: Expanding on Linear Regression
+  link: "https://docs.google.com/presentation/d/1WmP2EnYyZN5a3b7T8ZciErTf_Lw-34IEqA61hwVLrEY/edit?usp=sharing"
+  image: /static/images/lectures/linmat3.png
+- name: Least Squares Lines & Linear Regression
+  link: "https://docs.google.com/presentation/d/1TlORSsuLOznPLdu_bMaUiCgQDOgSDTNQfvexgE4pzXc/edit?usp=sharing"
+  image: /static/images/lectures/linmat2.png
+- name: M3 - Variables & Assumptions
+  link: "https://docs.google.com/presentation/d/1EBtTfWiZ1F8oxcZmXMKCcNYJnx5czlKySWo9f_ywDxE/edit?usp=sharing"
+  image: /static/images/lectures/m3introvarassum.png
+- name: Basics of Matrices
+  link: "https://docs.google.com/presentation/d/1SHsQeBFJk5DuN6woFTfOFElNcaUfqADD_--TTtOJRvA/edit?usp=sharing"
+  image: /static/images/lectures/linmat1.png
+- name: MATLAB Intro
+  link: "https://docs.google.com/presentation/d/1A18drxCxXhM0u15_PuRk6fz2XMuqM1bORZm_bmYvqVA/edit?usp=sharing"
+  image: /static/images/lectures/matlabintro.png
+- name: Introduction & Interest Meeting
+  link: "https://docs.google.com/presentation/d/1UPCMy1MI9BSOnR9AL-LyA4fSzQVa-woXxuMQc3-lnOg/edit?usp=sharing"
+  image: /static/images/lectures/mmcintro.png

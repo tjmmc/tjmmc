@@ -1,0 +1,10 @@
+# Resources listed on the /matlab/ page.
+- name: MATLAB Intro
+  link: "https://docs.google.com/presentation/d/1A18drxCxXhM0u15_PuRk6fz2XMuqM1bORZm_bmYvqVA/edit?usp=sharing"
+  image: /static/images/lectures/matlabintro.png
+- name: Importing & Processing Data on MATLAB
+  link: "https://docs.google.com/presentation/d/1wQUdL8yXE7yK1QzVq1LzAKCVB00koCR0j-lib5i3F84/edit?usp=sharing"
+  image: /static/images/lectures/matlabimport.png
+- name: MATLAB Intro (2023)
+  link: "FILL-LINK"                # FILL: link for the 2023 MATLAB intro deck, or delete this entry
+  image: /static/images/lectures/matlabintro23.jpeg
