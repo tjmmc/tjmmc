@@ -1,0 +1,37 @@
+---
+layout: default
+title: Problem of the Month | TJ Math Modeling
+permalink: /problem-of-the-month/
+nav: potm
+---
+<section class="Page">
+    <h1 class="Page-title">Problem of the Month</h1>
+
+    <!-- FILL: one-sentence tagline for the problem of the month -->
+    <p class="Page-lead">[FILL: tagline]</p>
+
+    <h2 class="Heading">about.</h2>
+    <!-- FILL: description of how problem of the month works -->
+    <p class="Page-body">[FILL: description]</p>
+
+    <h2 class="Heading">this month's problem.</h2>
+    <!-- FILL: the current problem — either write it here or link the PDF/doc -->
+    <p class="Page-body">[FILL: this month's problem, or a short intro to it]</p>
+    <!-- FILL: link to the problem document, or delete this button -->
+    <a class="Pill" href="FILL-PROBLEM-LINK">View the Problem</a>
+
+    <h2 class="Heading">submit your paper.</h2>
+    <!-- FILL: submission instructions (format, deadline, etc.) -->
+    <p class="Page-body">[FILL: how and when to submit]</p>
+    <!-- Submissions land at the club email; swap for a form link if you make one -->
+    <a class="Pill" href="mailto:tjmathhunt@gmail.com?subject=Problem%20of%20the%20Month%20Submission">Send Us Your Paper</a>
+
+    {% if site.data.potm %}
+    <h2 class="Heading">past problems.</h2>
+    <div class="Pills" style="justify-content: flex-start;">
+        {% for problem in site.data.potm %}
+        <a class="Pill" href="{{ problem.link }}">{{ problem.name }}</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
