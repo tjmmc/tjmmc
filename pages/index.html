@@ -16,18 +16,34 @@ nav: home
 
 <section class="Intro">
     <div class="Intro-text">
-        <h2>Math in competitions, they're focused on <span class="accent">tricks</span>.</h2>
+        <p class="Intro-kicker">Math competitions are focused on abstract tricks.</p>
+        <h2>Math modeling teaches solutions to the <i>real world</i>.</h2>
         <p>
-            Our club is focused on a different topic: <span class="accent">Math Modeling</span>.
-            We will teach you how to apply tons of unique techniques, some of which you might
-            not get to learn until senior year. We also compete in the annual Mathworks Math
-            Modeling (M3) challenge, a national competition with over
-            <span class="accent">$100,000</span> in prizes.
+            We'll show you how to apply tons of unique techniques, many of which you'd never
+            learn in high school. We also compete in many competitions, including the
+            national $100,000 prize pool M3 challenge.
+            Keep your eyes peeled for our own one, M&sup2; :)
         </p>
     </div>
     <div class="Intro-image">
         <img src="/static/images/m3.jpg" alt="Our team at the M3 Challenge">
     </div>
+</section>
+
+<section class="Events">
+    <h2 class="Heading">upcoming dates.</h2>
+    {% for event in site.data.events %}
+    <div class="Event">
+        <div class="Event-date">
+            <span class="Event-month">{{ event.month }}</span>
+            <span class="Event-day">{{ event.day }}</span>
+        </div>
+        <div class="Event-info">
+            <h3>{{ event.name }}</h3>
+            {% if event.note %}<p>{{ event.note }}</p>{% endif %}
+        </div>
+    </div>
+    {% endfor %}
 </section>
 
 <section class="Leadership">

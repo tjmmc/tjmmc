@@ -1,0 +1,18 @@
+# Upcoming dates shown on the home page.
+#
+# Each entry is one row: month is the 3-letter month for the date tile,
+# day is the day number, name is the event, note is an optional one-liner
+# (delete the note line to leave it off). Add or remove entries freely;
+# they display in the order listed here.
+- month: "mmm"          # FILL: e.g. sep
+  day: "00"             # FILL: e.g. 12
+  name: "[FILL: event name]"
+  note: "[FILL: short detail, e.g. room and time]"
+- month: "mmm"          # FILL
+  day: "00"             # FILL
+  name: "[FILL: event name]"
+  note: "[FILL: short detail]"
+- month: "mmm"          # FILL
+  day: "00"             # FILL
+  name: "[FILL: event name]"
+  note: "[FILL: short detail]"
