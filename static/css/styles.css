@@ -602,9 +602,57 @@ h1, h2, h3 {
         width: 100%;
         justify-content: flex-start;
     }
-    .Blurbs-heading {
-    text-align: center;
-    margin: 3rem 0 2rem;
-    }
+
 }
 
+.Carousel-section {
+    margin: 3rem auto;
+    max-width: 900px;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.Carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.Carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.Carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.Carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+.Carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.Carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    padding: 0;
+}
+
+.Carousel-dot.is-active {
+    background: #333;
+}
