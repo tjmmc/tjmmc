@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-<script>
 document.addEventListener('DOMContentLoaded', function () {
     const track = document.getElementById('carouselTrack');
     const dotsContainer = document.getElementById('carouselDots');
@@ -48,4 +47,3 @@ document.addEventListener('DOMContentLoaded', function () {
     goToSlide(0);
     startAutoplay();
 });
-</script>
