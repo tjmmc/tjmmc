@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 <script>
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
     const track = document.getElementById('carouselTrack');
     const dotsContainer = document.getElementById('carouselDots');
     if (!track || !dotsContainer) return;
@@ -47,5 +47,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     goToSlide(0);
     startAutoplay();
-})();
+});
 </script>
