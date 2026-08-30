@@ -1,0 +1,8 @@
+# Partners shown on the home page. For real partners, set name (and logo once
+# you have an image in static/images/partners/). Entries with claim: true render
+# as "claim your spot here" placeholder tiles.
+- name: Ms. Yang
+  role: Club Sponsor
+- claim: true
+- claim: true
+- claim: true

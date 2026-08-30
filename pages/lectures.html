@@ -4,6 +4,11 @@ title: Lectures | TJ Math Modeling
 permalink: /lectures/
 nav: lectures
 ---
+<section class="Page">
+    <h1 class="Page-title">Lectures</h1>
+    <p class="Page-lead">Slides from our 8th period lectures &mdash; math modeling techniques, competition prep, and tools.</p>
+</section>
+
 <section class="Books">
     {% for lecture in site.data.lectures %}
     <a class="Box" href="{{ lecture.link }}">
@@ -12,4 +17,20 @@ nav: lectures
         <h2 class="Info">{{ lecture.name }}</h2>
     </a>
     {% endfor %}
+</section>
+
+<section class="Page">
+    <h2 class="Heading">matlab.</h2>
+    <!-- FILL: one short paragraph on how the club uses MATLAB (e.g. for M3 models,
+         simulations, data processing) and how members get a license -->
+    <p class="Page-body">[FILL: how we use MATLAB and how to get a license]</p>
+    <div class="Books">
+        {% for item in site.data.matlab %}
+        <a class="Box" href="{{ item.link }}">
+            <img class="bgimg" src="{{ item.image }}" alt="">
+            <div class="radialBg"></div>
+            <h2 class="Info">{{ item.name }}</h2>
+        </a>
+        {% endfor %}
+    </div>
 </section>

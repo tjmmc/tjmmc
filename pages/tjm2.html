@@ -1,0 +1,41 @@
+---
+layout: default
+title: TJM&sup2; | TJ Math Modeling
+permalink: /tjm2/
+nav: tjm2
+---
+<section class="Page">
+    <h1 class="Page-title">TJM&sup2;</h1>
+    <p class="Page-lead">The Math Modeling Hackathon, where teams apply mathematical models to analyze real-world issues.</p>
+
+    <h2 class="Heading">what is it?</h2>
+    <p class="Page-body">An 8-hour team hackathon &mdash; but instead of building apps, you're creating mathematical models, M3-style. Teams research a real-world issue, develop an original model to address it, and submit a written paper outlining their approach, assumptions, and results, which is evaluated by a panel of experts &mdash; culminating with top teams presenting their model live.</p>
+
+    <h2 class="Heading">why you should join.</h2>
+    <ul class="Perks">
+        <li><strong>A day out with friends.</strong> Bring your team, or find one there.</li>
+        <li><strong>FREE FOOD.</strong> We will get pizza or Chipotle or boba.</li>
+        <li><strong>$2500 in prizes.</strong> Just submit a paper and you'll get swag. Raffles throughout.</li>
+        <li><strong>No experience needed.</strong> We'll present everything you need on the day-of. Come to 8th periods or our discord for extra prep and questions.</li>
+    </ul>
+
+    <div class="Callout">
+        <h2 class="Heading">m3 recruitment.</h2>
+        <p class="Page-body">Top performers are considered in our team selection for the international M3 challenge &mdash; where we've recently won $20,000 and $15,000.</p>
+    </div>
+
+    <h2 class="Heading">faq &amp; logistics.</h2>
+    <dl class="Faq">
+        {% for item in site.data.tjm2_faq %}
+        <dt>{{ item.q }}</dt>
+        <dd>{{ item.a }}</dd>
+        {% endfor %}
+    </dl>
+
+    <h2 class="Heading">interest form.</h2>
+    <p class="Page-body">Non-committal &mdash; sign up to be notified of updates. 30 teams max.</p>
+    <a class="Pill" href="{{ site.data.links.interest_form }}">I'm Interested</a>
+
+    <h2 class="Heading">questions?</h2>
+    <p class="Page-body">Reach out at <a href="mailto:{{ site.data.links.email }}">{{ site.data.links.email }}</a>, or ask in <a href="{{ site.data.links.discord }}">our discord</a>.</p>
+</section>

@@ -1,0 +1,13 @@
+# Home page photo gallery. Swap or add images freely — files live in static/images/.
+- image: /static/images/m3.jpg
+  caption: Competing at the M3 Challenge
+- image: /static/images/lectures/mmcteam2223.jpg
+  caption: Our 2022-23 team
+- image: /static/images/lectures/mmcintro23.jpeg
+  caption: 8th period kickoff
+- image: /static/images/lectures/mmcintro.png
+  caption: Interest meeting
+- image: /static/images/lectures/matlabintro23.jpeg
+  caption: MATLAB workshop
+- image: /static/images/m3_challenge.png
+  caption: M3 Challenge weekend   # FILL: swap for a news-coverage screenshot when you have one

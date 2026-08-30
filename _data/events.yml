@@ -1,18 +1,27 @@
-# Upcoming dates shown on the home page.
-#
-# Each entry is one row: month is the 3-letter month for the date tile,
-# day is the day number, name is the event, note is an optional one-liner
-# (delete the note line to leave it off). Add or remove entries freely;
-# they display in the order listed here.
-- month: "mmm"          # FILL: e.g. sep
-  day: "00"             # FILL: e.g. 12
-  name: "[FILL: event name]"
-  note: "[FILL: short detail, e.g. room and time]"
-- month: "mmm"          # FILL
-  day: "00"             # FILL
-  name: "[FILL: event name]"
-  note: "[FILL: short detail]"
-- month: "mmm"          # FILL
-  day: "00"             # FILL
-  name: "[FILL: event name]"
-  note: "[FILL: short detail]"
+# Upcoming dates shown on the home page timeline, in display order.
+# month: 3-letter month for the date tile; day can be a number or a range.
+# note and link are optional — delete the line to leave one off.
+- month: sep
+  day: "9"
+  name: Activity Fair
+  note: Meet us at the Activity Fair for a game and treats!
+- month: sep
+  day: "00"          # FILL: date of first 8th period
+  name: "8th Period #1"
+  note: Model what temperature this physical coffee cup right here will be in 10 minutes.
+  link: /activities/
+- month: sep
+  day: "00"          # FILL: fermithon date
+  name: Fermithon
+  note: Fast, fun estimation showdown.
+  link: /activities/
+- month: oct
+  day: "00"          # FILL: mock round date
+  name: TJM&sup2; Mock Round
+  note: A practice run before the real thing.
+  link: /tjm2/
+- month: oct
+  day: "&ndash;nov"
+  name: TJM&sup2;
+  note: Our own math modeling hackathon, mid-October to mid-November.
+  link: /tjm2/
