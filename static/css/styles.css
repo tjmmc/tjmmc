@@ -946,3 +946,55 @@ h1, h2, h3 {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+.Carousel-section {
+    max-width: 72em;
+    margin: 0 auto 3.5em;
+    text-align: center;
+    padding: 0 clamp(1.5em, 5vw, 3em);
+}
+
+.Carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.Carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.Carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.Carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
+.Carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.Carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    padding: 0;
+}
+
+.Carousel-dot.is-active {
+    background: #333;
+}
