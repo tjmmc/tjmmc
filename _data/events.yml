@@ -6,22 +6,22 @@
   name: Activity Fair
   note: Meet us at the Activity Fair for a game and treats!
 - month: sep
-  day: "00"          # FILL: date of first 8th period
+  day: "11"          # FILL: date of first 8th period
   name: "8th Period #1"
-  note: Model what temperature this physical coffee cup right here will be in 10 minutes.
+  note: An intro to the team and some examples of how the club will be
   link: /activities/
 - month: sep
   day: "00"          # FILL: fermithon date
   name: Fermithon
-  note: Fast, fun estimation showdown.
+  note: "An estimation showdwon all about "close enough""
   link: /activities/
 - month: oct
-  day: "00"          # FILL: mock round date
+  day: "??"          # FILL: mock round date
   name: TJM&sup2; Mock Round
-  note: A practice run before the real thing.
+  note: A practice version of the competition with commentary from our officers
   link: /tjm2/
 - month: oct
   day: "&ndash;nov"
   name: TJM&sup2;
-  note: Our own math modeling hackathon, mid-October to mid-November.
+  note: Our own math modeling hackathon! (~mid-October to mid-November)
   link: /tjm2/
