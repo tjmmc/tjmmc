@@ -6,27 +6,27 @@
 #   - image: drop a photo into static/images/leadership/ and point to it,
 #            e.g. /static/images/leadership/firstname.jpg
 # Add or remove entries to match however many officers there are.
-- name: "[FILL: name]"
-  role: "[FILL: title]"
-  image: /static/images/leadership/placeholder.svg   # FILL: photo
-- name: "[FILL: name]"
-  role: "[FILL: title]"
-  image: /static/images/leadership/placeholder.svg   # FILL: photo
-- name: "[FILL: name]"
-  role: "[FILL: title]"
-  image: /static/images/leadership/placeholder.svg   # FILL: photo
-- name: "[FILL: name]"
-  role: "[FILL: title]"
-  image: /static/images/leadership/placeholder.svg   # FILL: photo
-- name: "[FILL: name]"
-  role: "[FILL: title]"
-  image: /static/images/leadership/placeholder.svg   # FILL: photo
-- name: "[FILL: name]"
-  role: "[FILL: title]"
-  image: /static/images/leadership/placeholder.svg   # FILL: photo
-- name: "[FILL: name]"
-  role: "[FILL: title]"
-  image: /static/images/leadership/placeholder.svg   # FILL: photo
-- name: "[FILL: name]"
-  role: "[FILL: title]"
-  image: /static/images/leadership/placeholder.svg   # FILL: photo
+- name: "Zoeb Izzi"
+  role: "President"
+  image: /static/images/officers/zoeb.JPG   # FILL: photo
+- name: "Mohan Parthasarthy"
+  role: "Vice President"
+  image: /static/images/officers/mohan.png   # FILL: photo
+- name: "Charlie Wang"
+  role: "Vice President"
+  image: /static/images/officers/charlie.jpg   # FILL: photo
+- name: "Isaac Leetyn"
+  role: "Teaching Coordinator"
+  image: /static/images/officers/isaac.jpeg   # FILL: photo
+- name: "David Kharitonashlivi"
+  role: "Teaching Coordinator"
+  image: /static/images/officers/david.jpg   # FILL: photo
+- name: "Finance Officer"
+  role: "Kossara Tabakova"
+  image: /static/images/officers/kossara.jpg   # FILL: photo
+- name: "Neil Yerra"
+  role: "Webmaster"
+  image: /static/images/officers/neil.jpg   # FILL: photo
+- name: "Ms. Yang"
+  role: "Sponsor"
+  image: /static/images/officers/placeholder.svg   # FILL: photo
