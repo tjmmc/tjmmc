@@ -998,3 +998,156 @@ h1, h2, h3 {
 .Carousel-dot.is-active {
     background: #333;
 }
+
+/* ---------- LLM prompting relay (/llmprompting) ---------- */
+
+.Relay .Pill {
+    cursor: pointer;
+}
+
+.Relay .Pill:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.Relay .Pill--ghost {
+    background-color: var(--paper);
+    color: var(--navy);
+}
+
+.Relay .Pill--ghost:hover {
+    background-color: var(--navy);
+    color: #ffffff;
+}
+
+.Relay-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8em;
+    margin: 0.8em 0;
+}
+
+.Relay-input,
+.Relay-text {
+    font-family: var(--sans);
+    font-size: 1em;
+    color: var(--ink);
+    background-color: var(--paper);
+    border: 1px solid var(--rule-strong);
+    padding: 0.65em 0.8em;
+}
+
+.Relay-input:focus,
+.Relay-text:focus {
+    outline: 2px solid var(--navy);
+    outline-offset: -1px;
+}
+
+.Relay-input {
+    flex: 0 1 16em;
+    min-width: 0;
+}
+
+.Relay-text {
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+.Relay-error {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.Relay-note {
+    color: var(--muted);
+    font-size: 0.9em;
+}
+
+.Relay-team {
+    font-size: 1.2em;
+    margin: 1.6em 0 0.6em;
+}
+
+.Relay-card {
+    border: 1px solid var(--rule);
+    padding: 1em 1.1em;
+    margin-bottom: 1em;
+}
+
+.Relay-card--pending {
+    border-left: 3px solid var(--accent);
+}
+
+.Relay-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    margin-bottom: 0.6em;
+}
+
+.Relay-label {
+    font-family: var(--mono);
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0.9em 0 0.3em;
+}
+
+.Relay-pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    background-color: var(--wash);
+    padding: 0.7em 0.9em;
+    margin-bottom: 0.6em;
+    font-size: 0.95em;
+}
+
+.Relay-pre--reply {
+    background-color: var(--paper);
+    border-left: 2px solid var(--navy);
+}
+
+.Relay-status,
+.Relay-badge:not(:empty) {
+    font-family: var(--mono);
+    font-size: 0.72em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.15em 0.6em;
+    border: 1px solid currentColor;
+}
+
+.Relay-status--pending,
+.Relay-badge {
+    color: var(--accent);
+}
+
+.Relay-status--answered {
+    color: var(--navy);
+}
+
+.Relay-status--rejected {
+    color: var(--muted);
+}
+
+.Relay-link {
+    margin-left: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-size: 0.85em;
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-color: var(--rule-strong);
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.Relay-link:hover {
+    color: var(--accent);
+}

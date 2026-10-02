@@ -1,0 +1,261 @@
+---
+layout: default
+title: LLM Prompting | TJ Math Modeling
+permalink: /llmprompting/
+noindex: true
+sitemap: false
+---
+<section class="Page Relay">
+    <h1 class="Page-title">LLM Prompting</h1>
+
+    <div id="relay-login">
+        <p class="Page-body">Enter your team's passcode to send prompts. An officer reviews each prompt, runs it, and posts the response here.</p>
+        <form id="relay-login-form" class="Relay-row">
+            <input id="relay-code" class="Relay-input" type="password" placeholder="passcode" autocomplete="off" required>
+            <button class="Pill" type="submit">Enter</button>
+        </form>
+        <p id="relay-login-error" class="Relay-error" hidden></p>
+    </div>
+
+    <div id="relay-team" hidden>
+        <h2 class="Heading"><span id="relay-team-name"></span>.</h2>
+        <form id="relay-submit-form">
+            <textarea id="relay-prompt" class="Relay-text" rows="6" placeholder="Write your prompt..." required></textarea>
+            <div class="Relay-row">
+                <button class="Pill" type="submit">Send Prompt</button>
+                <span id="relay-submit-status" class="Relay-note"></span>
+            </div>
+        </form>
+        <h2 class="Heading">your prompts.</h2>
+        <div id="relay-team-list"></div>
+    </div>
+
+    <div id="relay-admin" hidden>
+        <h2 class="Heading">boss terminal <span id="relay-pending" class="Relay-badge"></span></h2>
+        <div id="relay-admin-list"></div>
+    </div>
+
+    <p class="Relay-note"><a href="#" id="relay-logout" hidden>log out</a></p>
+</section>
+
+<script>
+(function () {
+    // Google Apps Script web app (/exec URL). Passcodes are checked there, not here.
+    var API = "https://script.google.com/macros/s/AKfycbw8HGqF24IYNwe7cPTLud-AWtQN4_bIdNdaeKOlN9-0H_VPChHafgRMEtpl72FQpf-F3g/exec";
+    var POLL_MS = 10000;
+    var KEY = "llmprompting-code";
+
+    var code = null;
+    var role = null;
+    var timer = null;
+
+    function $(id) { return document.getElementById(id); }
+
+    function call(action, data) {
+        var body = Object.assign({ action: action, code: code }, data || {});
+        // text/plain avoids a CORS preflight, which Apps Script can't answer
+        return fetch(API, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify(body)
+        }).then(function (r) { return r.json(); }).then(function (res) {
+            if (res.error) throw new Error(res.error);
+            return res;
+        });
+    }
+
+    function store(v) {
+        try { v ? sessionStorage.setItem(KEY, v) : sessionStorage.removeItem(KEY); } catch (e) {}
+    }
+
+    function el(tag, cls, text) {
+        var n = document.createElement(tag);
+        if (cls) n.className = cls;
+        if (text != null) n.textContent = text;
+        return n;
+    }
+
+    function when(iso) {
+        if (!iso) return "";
+        var d = new Date(iso);
+        return isNaN(d) ? "" : d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+    }
+
+    function badge(status) {
+        return el("span", "Relay-status Relay-status--" + status, status);
+    }
+
+    function login(c) {
+        code = c;
+        return call("login").then(function (res) {
+            role = res.role;
+            store(c);
+            $("relay-login").hidden = true;
+            $("relay-logout").hidden = false;
+            if (role === "admin") {
+                $("relay-admin").hidden = false;
+            } else {
+                $("relay-team-name").textContent = res.team.toLowerCase();
+                $("relay-team").hidden = false;
+            }
+            refresh();
+            timer = setInterval(refresh, POLL_MS);
+        });
+    }
+
+    function refresh() {
+        return (role === "admin" ? call("all").then(renderAdmin) : call("mine").then(renderTeam))
+            .catch(function () {});
+    }
+
+    function renderTeam(res) {
+        var list = $("relay-team-list");
+        var items = res.items.slice().reverse();
+        list.replaceChildren();
+        if (!items.length) list.appendChild(el("p", "Relay-note", "No prompts yet."));
+        items.forEach(function (it) {
+            var card = el("div", "Relay-card");
+            var head = el("div", "Relay-card-head");
+            head.appendChild(badge(it.status));
+            head.appendChild(el("span", "Relay-note", when(it.created)));
+            card.appendChild(head);
+            card.appendChild(el("p", "Relay-label", "prompt"));
+            card.appendChild(el("div", "Relay-pre", it.prompt));
+            if (it.status === "answered") {
+                card.appendChild(el("p", "Relay-label", "response"));
+                card.appendChild(el("div", "Relay-pre Relay-pre--reply", it.reply));
+            } else if (it.status === "rejected") {
+                card.appendChild(el("p", "Relay-label", "not sent"));
+                card.appendChild(el("div", "Relay-pre", it.reply || "This prompt was not approved. Try revising it."));
+            } else {
+                card.appendChild(el("p", "Relay-note", "Waiting for an officer..."));
+            }
+            list.appendChild(card);
+        });
+    }
+
+    // Drafts typed into reply boxes survive the 10s re-render.
+    var drafts = {};
+
+    function renderAdmin(res) {
+        var list = $("relay-admin-list");
+        var pending = res.items.filter(function (it) { return it.status === "pending"; });
+        $("relay-pending").textContent = pending.length ? pending.length + " pending" : "";
+
+        var focused = document.activeElement && document.activeElement.dataset ? document.activeElement.dataset.id : null;
+        var teams = {};
+        res.items.forEach(function (it) { (teams[it.team] = teams[it.team] || []).push(it); });
+
+        list.replaceChildren();
+        if (!res.items.length) list.appendChild(el("p", "Relay-note", "No prompts yet."));
+        Object.keys(teams).sort().forEach(function (team) {
+            var items = teams[team].slice().sort(function (a, b) {
+                var pa = a.status === "pending" ? 0 : 1, pb = b.status === "pending" ? 0 : 1;
+                return pa - pb || (a.status === "pending" ? (a.created < b.created ? -1 : 1) : (a.created < b.created ? 1 : -1));
+            });
+            var waiting = items.filter(function (it) { return it.status === "pending"; }).length;
+            list.appendChild(el("h3", "Relay-team", team + (waiting ? " · " + waiting + " pending" : "")));
+            items.forEach(function (it) { list.appendChild(adminCard(it)); });
+        });
+
+        if (focused) {
+            var box = list.querySelector('textarea[data-id="' + focused + '"]');
+            if (box) { box.focus(); box.selectionStart = box.selectionEnd = box.value.length; }
+        }
+    }
+
+    function adminCard(it) {
+        var card = el("div", "Relay-card" + (it.status === "pending" ? " Relay-card--pending" : ""));
+        var head = el("div", "Relay-card-head");
+        head.appendChild(badge(it.status));
+        head.appendChild(el("span", "Relay-note", when(it.created)));
+        var copy = el("button", "Relay-link", "copy prompt");
+        copy.type = "button";
+        copy.onclick = function () {
+            navigator.clipboard.writeText(it.prompt).then(function () {
+                copy.textContent = "copied";
+                setTimeout(function () { copy.textContent = "copy prompt"; }, 1500);
+            });
+        };
+        head.appendChild(copy);
+        card.appendChild(head);
+        card.appendChild(el("div", "Relay-pre", it.prompt));
+
+        if (it.status !== "pending") {
+            card.appendChild(el("p", "Relay-label", it.status === "answered" ? "response sent" : "rejected"));
+            if (it.reply) card.appendChild(el("div", "Relay-pre Relay-pre--reply", it.reply));
+            return card;
+        }
+
+        var box = el("textarea", "Relay-text");
+        box.rows = 5;
+        box.placeholder = "Paste the response (or a note explaining a rejection)...";
+        box.dataset.id = it.id;
+        box.value = drafts[it.id] || "";
+        box.oninput = function () { drafts[it.id] = box.value; };
+        card.appendChild(box);
+
+        var row = el("div", "Relay-row");
+        var send = el("button", "Pill", "Send Reply");
+        var reject = el("button", "Pill Pill--ghost", "Reject");
+        var status = el("span", "Relay-note");
+        send.type = reject.type = "button";
+        function act(action) {
+            if (action === "reply" && !box.value.trim()) { status.textContent = "Reply is empty."; return; }
+            send.disabled = reject.disabled = true;
+            status.textContent = "Sending...";
+            call(action, { id: it.id, reply: box.value }).then(function () {
+                delete drafts[it.id];
+                refresh();
+            }).catch(function (e) {
+                status.textContent = e.message;
+                send.disabled = reject.disabled = false;
+            });
+        }
+        send.onclick = function () { act("reply"); };
+        reject.onclick = function () { act("reject"); };
+        row.appendChild(send);
+        row.appendChild(reject);
+        row.appendChild(status);
+        card.appendChild(row);
+        return card;
+    }
+
+    $("relay-login-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var err = $("relay-login-error");
+        err.hidden = true;
+        login($("relay-code").value.trim().toLowerCase()).catch(function (e) {
+            code = null;
+            err.textContent = e.message === "wrong passcode" ? "Wrong passcode." : "Couldn't connect. Try again.";
+            err.hidden = false;
+        });
+    });
+
+    $("relay-submit-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var input = $("relay-prompt");
+        var status = $("relay-submit-status");
+        var btn = e.target.querySelector("button");
+        btn.disabled = true;
+        status.textContent = "Sending...";
+        call("submit", { prompt: input.value }).then(function () {
+            input.value = "";
+            status.textContent = "Sent. An officer will review it.";
+            refresh();
+        }).catch(function (e) {
+            status.textContent = e.message;
+        }).then(function () { btn.disabled = false; });
+    });
+
+    $("relay-logout").addEventListener("click", function (e) {
+        e.preventDefault();
+        store(null);
+        location.reload();
+    });
+
+    var saved = null;
+    try { saved = sessionStorage.getItem(KEY); } catch (e) {}
+    if (saved) login(saved).catch(function () { store(null); code = null; });
+})();
+</script>
