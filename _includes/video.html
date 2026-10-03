@@ -1,0 +1,8 @@
+{%- comment -%} One YouTube video: a thumbnail that becomes the player on click (main.js). {%- endcomment -%}
+<figure class="Video">
+    <a class="Video-frame" href="https://www.youtube.com/watch?v={{ include.v.id }}" data-yt="{{ include.v.id }}" aria-label="Play video: {{ include.v.title | escape }}">
+        <img src="https://i.ytimg.com/vi/{{ include.v.id }}/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+        <span class="Video-play" aria-hidden="true"></span>
+    </a>
+    <figcaption class="Fig"><span class="Video-meta">{{ include.v.channel }}</span>{{ include.v.caption }}</figcaption>
+</figure>

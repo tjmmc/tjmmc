@@ -1,0 +1,11 @@
+{%- comment -%} Press list. include.home=true shows only entries marked home: true. {%- endcomment -%}
+<ul class="Press">
+{%- for p in site.data.press -%}
+{%- if include.home and p.home != true -%}{%- continue -%}{%- endif %}
+    <li><a href="{{ p.url }}">
+        <span class="Press-outlet">{{ p.outlet }}<span class="Press-kind">{% if p.kind == "video" %}TV segment{% elsif p.kind == "release" %}Press release{% else %}Article{% endif %}</span></span>
+        <span class="Press-title">{{ p.title }}</span>
+        <span class="Press-date">{{ p.date | date: "%b %-d, %Y" }}</span>
+    </a></li>
+{%- endfor %}
+</ul>

@@ -1,0 +1,84 @@
+# Press coverage, newest first. Shown on /press/; entries with home: true also appear
+# on the home page (keep it to about 6). Every entry here was checked to be about
+# TJHSST (Alexandria, VA). Add new coverage at the top.
+#   outlet:   publication or station
+#   title:    the headline as published
+#   date:     YYYY-MM-DD
+#   url:      link to the story
+#   kind:     article | video | release
+- outlet: The DMV Daily
+  title: "Thomas Jefferson High School students advance to international math finals after tackling the real-world impact of sports gambling"
+  date: 2026-05-26
+  url: "https://thedmvdaily.com/thomas-jefferson-high-school-students-advance-to-international-math-finals-after-tackling-the-real-world-impact-of-sports-gambling/"
+  kind: article
+- outlet: WUSA9
+  title: "Thomas Jefferson High School students headed to math modeling competition"
+  date: 2026-04-26
+  url: "https://www.wusa9.com/video/news/education/thomas-jefferson-high-school-students-headed-to-math-modeling-competition/65-566e5b99-b544-4bd0-950e-d1cb44a260e5"
+  kind: video
+  home: true
+- outlet: FOX 5 DC
+  title: "Alexandria math whizzes beat out thousands"
+  date: 2026-04-24
+  url: "https://www.fox5dc.com/video/fmc-idw41it89tkej0sp"
+  kind: video
+  home: true
+- outlet: Patch
+  title: "Alexandria students head to finals of international math competition"
+  date: 2026-04-15
+  url: "https://patch.com/virginia/oldtownalexandria/amp/33960997/alexandria-students-head-to-finals-of-international-math-competition"
+  kind: article
+- outlet: Patch
+  title: "TJ student team places second in international math competition"
+  date: 2024-05-02
+  url: "https://patch.com/virginia/greateralexandria/tj-student-team-places-second-international-math-competition"
+  kind: article
+- outlet: The Zebra
+  title: "Alexandria students place second, win $15K in scholarship prizes at New York finals of M3 Challenge"
+  date: 2024-05-01
+  url: "https://thezebra.org/2024/05/01/students-win-15k/"
+  kind: article
+- outlet: WTOP
+  title: "Fairfax Co. high schoolers compete for $20K in international math competition"
+  date: 2024-04-27
+  url: "https://wtop.com/fairfax-county/2024/04/fairfax-co-high-schoolers-compete-for-20k-in-international-math-competition/"
+  kind: article
+  home: true
+- outlet: Patch
+  title: "TJ students advance to final of international math competition"
+  date: 2024-04-17
+  url: "https://patch.com/virginia/greateralexandria/tj-students-advance-final-international-math-competition"
+  kind: article
+- outlet: WUSA9
+  title: "Run the numbers: Fairfax high school math team wins $20K at competition"
+  date: 2023-04-26
+  url: "https://www.wusa9.com/article/life/heartwarming/get-uplifted/fairfax-county-math-team-wins-m3-challenge/65-b9a3068c-2e7b-4379-a889-6667aebd46b8"
+  kind: article
+  home: true
+- outlet: Patch
+  title: "TJ students secure first place in global math competition"
+  date: 2023-04-26
+  url: "https://patch.com/virginia/greateralexandria/tj-students-secure-first-place-global-math-competition"
+  kind: article
+  home: true
+- outlet: FOX 5 DC
+  title: "Thomas Jefferson High School students win top prize in international math competition"
+  date: 2023-04-25
+  url: "https://www.fox5dc.com/news/thomas-jefferson-high-school-students-win-top-prize-in-international-math-competition"
+  kind: article
+  home: true
+- outlet: The Zebra
+  title: "Alexandria students win international math competition, earn $20K in college scholarships"
+  date: 2023-04-25
+  url: "https://thezebra.org/2023/04/25/alexandria-students-win-international-math-competition/"
+  kind: article
+- outlet: Connection Newspapers
+  title: "TJ team makes finals of MathWorks"
+  date: 2023-04-05
+  url: "https://m.connectionnewspapers.com/news/2023/apr/05/tj-team-makes-finals-mathworks/"
+  kind: article
+- outlet: tjTODAY
+  title: "New club explores how \"Mathworks\" in real life"
+  date: 2020-11-14
+  url: "https://www.tjtoday.org/29869/news/new-club-explores-how-mathworks-in-real-life/"
+  kind: article

@@ -1,8 +1,7 @@
-# Partners shown on the home page. For real partners, set name (and logo once
-# you have an image in static/images/partners/). Entries with claim: true render
-# as "claim your spot here" placeholder tiles.
-- name: Ms. Yang
-  role: Club Sponsor
-- claim: true
-- claim: true
-- claim: true
+# TJM² sponsors, shown on the home page and the TJM² page once there are any.
+# Logos go in static/images/partners/ (SVG or a wide PNG on a transparent background).
+#   - name: Company
+#     tier: Title | Gold | Silver | Bronze
+#     logo: /static/images/partners/company.svg
+#     url: https://company.com
+[]

@@ -1,0 +1,41 @@
+# Photo grid on the home page, in display order. Files live in static/images/photos/.
+# Each photo gets a "Fig." number automatically. To add one:
+#   - src: /static/images/photos/your-photo.jpg   (about 1600px wide)
+#     small: /static/images/photos/your-photo-800.jpg   (optional, about 800px wide)
+#     caption: What's happening, in one sentence.
+#     alt: What the photo shows, for screen readers.
+# size: feature (big, spans two rows) or wide (half the row); default is a third.
+# An entry with reserved: true and no src renders as a labeled empty slot.
+# Many M3 photos are the M3 Challenge's (SIAM's) photos; credit them if SIAM asks.
+- src: /static/images/photos/m3-2023-champions.jpg
+  small: /static/images/photos/m3-2023-champions-800.jpg
+  caption: "The 2023 M3 Challenge champions with their $20,000 check at the finals in New York."
+  alt: "Five TJ students in suits holding a giant check made out to the M3 Challenge Champion"
+  size: feature
+- src: /static/images/photos/m3-2024-finals-presentation.jpg
+  small: /static/images/photos/m3-2024-finals-presentation-800.jpg
+  caption: "Presenting &ldquo;A Tale of Two Cities,&rdquo; a model of housing and homelessness, at the 2024 finals. The team placed second."
+  alt: "A TJ student presenting at a podium beside a slide titled A Tale of Two Cities, with teammates seated at a table"
+- src: /static/images/photos/wusa9-2026.jpg
+  small: /static/images/photos/wusa9-2026-800.jpg
+  caption: "Two of the 2026 finalists in the WUSA9 studio."
+  alt: "Two TJ students in suits being interviewed by a host on the WUSA9 set"
+- src: /static/images/photos/m3-checks-2023-2024.jpg
+  caption: "Back at TJ: the 2023 champion check and the 2024 runner-up check."
+  alt: "Two giant M3 Challenge checks on display, for $20,000 and $15,000"
+- src: /static/images/photos/m3-finals-terrace.jpg
+  small: /static/images/photos/m3-finals-terrace-800.jpg
+  caption: "All of the finalist teams on the terrace at the M3 Challenge finals in New York."
+  alt: "A large group of students in business attire on a rooftop terrace in New York"
+- src: /static/images/photos/club.jpg
+  small: /static/images/photos/club-800.jpg
+  caption: "Club members at TJ."
+  alt: "About forty students posing together in the TJHSST atrium"
+- src: /static/images/photos/club-2022-23.jpg
+  small: /static/images/photos/club-2022-23-800.jpg
+  caption: "The 2022&ndash;23 club."
+  alt: "A group of students posing in a classroom, some wearing holiday hats"
+  size: wide
+- reserved: true
+  caption: "TJM&sup2; 2026. Photos from November 21 go here."
+  size: wide

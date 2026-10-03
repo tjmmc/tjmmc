@@ -3,45 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <meta name="description" content="TJHSST Math Modeling Club">
+    {% assign page_title = page.title | default: site.title %}
+    {% assign page_desc = page.description | default: site.description %}
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page_desc | strip_html | strip_newlines }}">
     {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
-    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="TJ Math Modeling Club">
+    <meta property="og:title" content="{{ page_title | strip_html }}">
+    <meta property="og:description" content="{{ page_desc | strip_html | strip_newlines }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}/static/images/brand/og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#131314">
+    <link rel="icon" href="/static/images/brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/static/images/brand/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="/static/images/brand/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400..700&family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/styles.css?v={{ site.time | date: '%s' }}">
     <script src="/static/js/main.js?v={{ site.time | date: '%s' }}" defer></script>
 </head>
 <body>
-    <nav class="Nav">
-        <div class="Logo">
-            <a href="/"><img src="/static/images/TJMMC-Logo-Black.png" alt="TJ Math Modeling Club"></a>
+    <a class="Skip" href="#main">Skip to content</a>
+    <header class="Nav">
+        <div class="Nav-inner wrap">
+            <a class="Brand" href="/" aria-label="TJ Math Modeling, home">
+                <span class="Brand-mark">{% include mark-sm.svg %}</span>
+                <span class="Brand-name">TJ Math Modeling</span>
+            </a>
+            <button class="Nav-toggle" id="js-navbar-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="js-navlinks"><span></span><span></span></button>
+            <nav class="Navlinks" id="js-navlinks" aria-label="Main">
+                <a href="/tjm2/" {% if page.nav == "tjm2" %}aria-current="page"{% endif %}>TJM&sup2;</a>
+                <a href="/activities/" {% if page.nav == "activities" %}aria-current="page"{% endif %}>Activities</a>
+                <a href="/lectures/" {% if page.nav == "lectures" %}aria-current="page"{% endif %}>Lectures</a>
+                <a href="/potm/" {% if page.nav == "potm" %}aria-current="page"{% endif %}>Problem of the Month</a>
+                <a href="/press/" {% if page.nav == "press" %}aria-current="page"{% endif %}>Press</a>
+                <a class="Nav-cta" href="/tjm2/#sponsor">Sponsor</a>
+            </nav>
         </div>
-        <button class="navbar-toggle" id="js-navbar-toggle" aria-label="Toggle menu">
-            <span></span><span></span><span></span>
-        </button>
-        <div class="Navlinks" id="js-navlinks">
-            <a href="/tjm2/" {% if page.nav == "tjm2" %}class="active"{% endif %}>tjm&sup2;</a>
-            <a href="/activities/" {% if page.nav == "activities" %}class="active"{% endif %}>activities</a>
-            <a href="/lectures/" {% if page.nav == "lectures" %}class="active"{% endif %}>lectures</a>
-            <a href="/potm/" {% if page.nav == "potm" %}class="active"{% endif %}>potm</a>
-        </div>
-    </nav>
+    </header>
 
-    <main>
+    <main id="main">
         {{ content }}
     </main>
 
     <footer class="Footer">
-        <div class="Footer-left">
-            <p>&copy; 2026 TJ Math Modeling Club</p>
-            <p class="Footer-heart">made w &lt;3 by mmc</p>
+        <div class="Footer-grid wrap">
+            <div>
+                <span class="Footer-mark">{% include mark.svg %}</span>
+                <p class="Footer-name">TJ Math Modeling Club</p>
+                <p class="Footer-addr">Thomas Jefferson High School for Science and Technology<br>6560 Braddock Road, Alexandria, VA 22312</p>
+            </div>
+            <div>
+                <p class="Footer-head">Explore</p>
+                <ul>
+                    <li><a href="/tjm2/">TJM&sup2;</a></li>
+                    <li><a href="/activities/">Activities</a></li>
+                    <li><a href="/lectures/">Lectures</a></li>
+                    <li><a href="/potm/">Problem of the Month</a></li>
+                    <li><a href="/press/">Press</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="Footer-head">Elsewhere</p>
+                <ul>
+                    {% for item in site.data.footer %}<li><a href="{{ item.link }}">{{ item.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <p class="Footer-head">Contact</p>
+                <p><a href="mailto:{{ site.data.links.email }}">{{ site.data.links.email }}</a></p>
+                <p>Sponsoring TJM&sup2;? <a href="{{ site.data.links.sponsor_packet }}">Read our sponsorship packet (PDF)</a>.</p>
+            </div>
         </div>
-        <div class="Footer-right">
-            {% for item in site.data.footer %}
-            <a href="{{ item.link }}">{{ item.name }}</a>
-            {% endfor %}
+        <div class="wrap">
+            <div class="Footer-base">
+                <span>&copy; {{ site.time | date: '%Y' }} TJ Math Modeling Club</span>
+                <span>made w &lt;3 by mmc</span>
+            </div>
         </div>
     </footer>
 </body>

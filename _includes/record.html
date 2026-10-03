@@ -1,0 +1,10 @@
+{%- comment -%} M3 Challenge results strip, oldest first, then the press line. {%- endcomment -%}
+{%- assign results = site.data.record | sort: "year" %}
+<ol class="Record-list">
+{%- for r in results %}
+    <li><a href="{{ r.url }}"><span class="Record-year">{{ r.year }}</span><span class="Record-result">{{ r.result }}</span><span class="Record-detail">{{ r.detail }}</span></a></li>
+{%- endfor %}
+    {%- unless include.nopress %}
+    <li><a href="/press/"><span class="Record-year">Press</span><span class="Record-result">In the news</span><span class="Record-detail">FOX 5 DC &middot; WUSA9 &middot; WTOP</span></a></li>
+    {%- endunless %}
+</ol>

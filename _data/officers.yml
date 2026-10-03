@@ -1,32 +1,25 @@
-# Officer list shown on the home page.
-#
-# Every entry below is a placeholder. For each officer:
-#   - name:  put their name
-#   - role:  put their title
-#   - image: drop a photo into static/images/leadership/ and point to it,
-#            e.g. /static/images/leadership/firstname.jpg
-# Add or remove entries to match however many officers there are.
+# Officers shown on the home page, in order. Photos go in static/images/officers/.
+# Leave image out to show initials instead.
 - name: "Zoeb Izzi"
   role: "President"
-  image: /static/images/officers/zoeb.JPG   # FILL: photo
+  image: /static/images/officers/zoeb.JPG
 - name: "Mohan Parthasarthy"
   role: "Vice President"
-  image: /static/images/officers/mohan.png   # FILL: photo
+  image: /static/images/officers/mohan.png
 - name: "Charlie Wang"
   role: "Vice President"
-  image: /static/images/officers/charlie.jpg   # FILL: photo
+  image: /static/images/officers/charlie.jpg
 - name: "Isaac Leetyn"
   role: "Teaching Coordinator"
-  image: /static/images/officers/isaac.jpeg   # FILL: photo
+  image: /static/images/officers/isaac.jpeg
 - name: "David Kharitonashlivi"
   role: "Teaching Coordinator"
-  image: /static/images/officers/david.jpg   # FILL: photo
-- name: "Finance Officer"
-  role: "Kossara Tabakova"
-  image: /static/images/officers/kossara.jpg   # FILL: photo
+  image: /static/images/officers/david.jpg
+- name: "Kossara Tabakova"
+  role: "Finance Officer"
+  image: /static/images/officers/kossara.jpg
 - name: "Neil Yerra"
   role: "Webmaster"
-  image: /static/images/officers/neil.jpg   # FILL: photo
+  image: /static/images/officers/neil.jpg
 - name: "Ms. Yang"
-  role: "Sponsor"
-  image: /static/images/officers/placeholder.svg   # FILL: photo
+  role: "Faculty Sponsor"

@@ -1,4 +1,9 @@
+title: TJ Math Modeling Club
+description: The math modeling club at Thomas Jefferson High School for Science and Technology. 2023 M3 Challenge champions.
+url: "https://tjmmc.org"
 permalink: pretty
+plugins:
+  - jekyll-sitemap
 exclude:
   - OLD-website
   - README.md

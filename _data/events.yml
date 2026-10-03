@@ -1,27 +1,17 @@
-# Upcoming dates shown on the home page timeline, in display order.
-# month: 3-letter month for the date tile; day can be a number or a range.
-# note and link are optional — delete the line to leave one off.
-- month: sep
-  day: "9"
-  name: Activity Fair
-  note: Meet us at the Activity Fair for a game and treats!
-- month: sep
-  day: "11"          # FILL: date of first 8th period
-  name: "8th Period #1"
-  note: An intro to the team and some examples of how the club will be.
-  link: /activities/
-- month: sep
-  day: "00"          # FILL: fermithon date
-  name: Fermithon
-  note: An estimation showdwon all about being close enough
-  link: /activities/
-- month: oct
-  day: "??"          # FILL: mock round date
-  name: TJM&sup2; Mock Round
-  note: A practice version of the competition with commentary from our officers
+# Dates shown under "Coming up" on the home page, in order.
+#   name: what it is
+#   date: YYYY-MM-DD   (past dates hide themselves automatically)
+#   tba: "Oct"          (instead of date, when only the month is known; shows "TBA")
+#   note, link: optional
+- name: TJM&sup2; mock round
+  tba: Oct
+  note: A practice round of the competition, with commentary from our officers.
   link: /tjm2/
-- month: oct
-  day: "&ndash;nov"
-  name: TJM&sup2;
-  note: Our own math modeling hackathon! (~mid-October to mid-November)
+- name: Fermithon
+  tba: Fall
+  note: An estimation showdown where being close enough wins.
+  link: /activities/
+- name: TJM&sup2;
+  date: 2026-11-21
+  note: Our own math modeling competition for middle and high schoolers. Free, with $2,000+ in prizes.
   link: /tjm2/

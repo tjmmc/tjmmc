@@ -1,0 +1,14 @@
+# Competition results shown in the home page record strip and on /press/.
+# Official sources only (SIAM's M3 Challenge results pages). Newest first.
+- year: 2026
+  result: Finalist
+  detail: Top 6 of 770 teams
+  url: "https://m3challenge.siam.org/resources/archives/2026-year-at-a-glance/2026-winning-teams-list/"
+- year: 2024
+  result: Runner-up
+  detail: 2nd of 655 teams · $15,000
+  url: "https://m3challenge.siam.org/resources/archives/2024-year-at-a-glance/2024-winning-teams-list/"
+- year: 2023
+  result: Champion
+  detail: 1st of about 650 teams · $20,000
+  url: "https://m3challenge.siam.org/resources/archives/2023-year-at-a-glance/2023-winning-teams-list/"

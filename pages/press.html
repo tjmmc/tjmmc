@@ -1,0 +1,46 @@
+---
+layout: default
+title: Press · TJ Math Modeling
+description: News coverage, official results and videos of the TJ Math Modeling Club and TJ's teams in the MathWorks Math Modeling (M3) Challenge.
+permalink: /press/
+nav: press
+---
+<section class="Page-head wrap">
+    <p class="Label">Press</p>
+    <h1 class="Page-title">In the news</h1>
+    <p class="Page-lead">Coverage of TJ&rsquo;s math modeling teams, official results, and the videos of our final presentations.</p>
+</section>
+
+<section class="Record wrap" aria-labelledby="results-label">
+    <p class="Label" id="results-label">Official results &middot; MathWorks Math Modeling Challenge</p>
+    {% include record.html nopress=true %}
+    <p class="Page-body">Results link to the M3 Challenge&rsquo;s official winning-teams lists. TJ teams were recognized in 13 of the 17 years from 2010 to 2026.</p>
+</section>
+
+<section class="Section wrap" aria-labelledby="coverage-label">
+    <p class="Label" id="coverage-label">Coverage</p>
+    <h2 class="H2">News stories</h2>
+    {% include press-list.html %}
+</section>
+
+<section class="Section wrap" aria-labelledby="video-label">
+    <p class="Label" id="video-label">Watch</p>
+    <h2 class="H2">Videos</h2>
+    <div class="Videos">
+        {% for v in site.data.videos %}{% include video.html v=v %}{% endfor %}
+    </div>
+</section>
+
+<section class="Section wrap Split">
+    <div class="Panel">
+        <p class="Label">Our story</p>
+        <h3>Founded in 2020</h3>
+        <p>The club started in the fall of 2020, during virtual learning, as &ldquo;Mathworks.&rdquo; <a href="https://www.tjtoday.org/29869/news/new-club-explores-how-mathworks-in-real-life/">tjTODAY covered its first meeting</a>.</p>
+    </div>
+    <div class="Panel">
+        <p class="Label">Media and sponsors</p>
+        <h3>Get in touch</h3>
+        <p>For interviews, photos or sponsorship, email <a href="mailto:{{ site.data.links.email }}">{{ site.data.links.email }}</a>.</p>
+        <div class="Actions"><a class="Btn" href="{{ site.data.links.sponsor_packet }}">Sponsorship packet (PDF)</a></div>
+    </div>
+</section>
