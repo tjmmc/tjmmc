@@ -1,6 +1,11 @@
-# Central place for club links used across pages — fill each in once.
-discord: "https://discord.gg/pmkGspS2z"          # FILL: discord invite url
-instagram: "https://www.instagram.com/tj_mmc/"      # FILL: instagram profile url
-interest_form: "bit.ly/4r9Pfwg"   # FILL: TJM2 interest form url
+# Club links used across the site. Change them here once.
+email: "officers@tjmmc.org"
+discord: "https://discord.gg/pmkGspS2z"
+instagram: "https://www.instagram.com/tj_mmc/"
+instagram_handle: "@tj_mmc"
 github: "https://github.com/tjmmc"
-email: "tjmathhunt@gmail.com"
+ion: "https://ion.tjhsst.edu/eighth/activity/3295"
+interest_form: "https://docs.google.com/forms/d/e/1FAIpQLScBG8RfI8hJFy3RWFqU7chaGVPxuGcQ4_gmD96ob8n8zxm56w/viewform"
+sponsor_packet: "/static/media/TJM2-2026-Sponsorship.pdf"   # also tjmmc.org/u/sponsor
+flier: "/static/media/TJM2-2026-Flier.pdf"   # tjmmc.org/u/flier; deliberately not linked on the site
+m3_champion_paper: "https://m3challenge.siam.org/wp-content/uploads/CHAMPIONTC-RUNNER-UP_16401.pdf"

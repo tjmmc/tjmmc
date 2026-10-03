@@ -1,0 +1,8 @@
+{%- comment -%} Sponsor logos from _data/partners.yml. Renders nothing until there's at least one. {%- endcomment -%}
+{%- if site.data.partners and site.data.partners.size > 0 %}
+<div class="Sponsors">
+{%- for s in site.data.partners %}
+    <a class="Sponsor--{{ s.tier }}" href="{{ s.url }}">{% if s.logo %}<img src="{{ s.logo }}" alt="{{ s.name }}">{% else %}{{ s.name }}{% endif %}</a>
+{%- endfor %}
+</div>
+{%- endif %}

@@ -1,0 +1,29 @@
+# YouTube videos. Shown on /press/; home: true also shows on the home page (keep 3).
+# id is the part after watch?v= in the YouTube URL. They load only when clicked.
+- id: 9teXkk0JDWo
+  title: "M3 Challenge 2023 final event"
+  channel: SIAM
+  caption: "SIAM's recap of the 2023 finals, which opens with TJ announced as champion."
+  home: true
+- id: nqRGaYkz9yU
+  title: "TJHSST students win top prize in math competition"
+  channel: WUSA9
+  caption: "WUSA9 on the Math Modeling Club's 2023 win."
+  home: true
+- id: 0krGJ259qN8
+  title: "M3 Challenge presentation: TJHSST (Team #16401)"
+  channel: SIAM
+  caption: "The 2023 champion team presents its model of e-bike adoption."
+  home: true
+- id: UDp7SMX_y68
+  title: "M3 Challenge presentation: TJHSST (Team #17432)"
+  channel: SIAM
+  caption: "The 2024 runner-up team presents its model of housing and homelessness."
+- id: SXPiGoNJ-U0
+  title: "M3 Challenge presentation: TJHSST (#19421)"
+  channel: SIAM
+  caption: "The 2026 finalist team presents its model of online sports betting."
+- id: rsFNSSsv0Kk
+  title: "TJ students headed to math modeling competition"
+  channel: WUSA9
+  caption: "Two 2026 finalists talk about their model before the finals."

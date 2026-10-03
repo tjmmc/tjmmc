@@ -1,116 +1,161 @@
 ---
 layout: default
-title: TJ Math Modeling
+title: TJ Math Modeling Club
+description: The math modeling club at Thomas Jefferson High School for Science and Technology. M3 Challenge champions in 2023 and runners-up in 2024, and hosts of TJM², a free modeling competition on November 21, 2026.
 permalink: /
 nav: home
 ---
-<div class="Hero">
-    <video class="bgimg" autoplay loop muted playsinline>
-        <source src="/static/media/Intro.mp4" type="video/mp4">
-    </video>
-    <div class="gradimg"></div>
-    <div class="Info">
-        <h1><i>Real</i> World Applications.</h1>
+{% assign links = site.data.links %}
+<section class="Hero">
+    <div class="Hero-inner wrap">
+        <p class="Hero-kicker">Thomas Jefferson High School for Science and Technology</p>
+        <h1 class="Hero-title">TJ Math Modeling</h1>
+        <p class="Hero-lead">We turn messy, real-world questions into math, and we&rsquo;re the 2023 M3 Challenge champions.</p>
+        <div class="Actions">
+            <a class="Btn Btn--light" href="#join">Join the club</a>
+            <a class="Btn Btn--outline-light" href="/tjm2/">TJM&sup2; &middot; Nov 21</a>
+        </div>
     </div>
+    <picture class="Hero-art">
+        <source media="(max-width: 640px)" srcset="/static/images/brand/hero-tall.jpg">
+        <img src="/static/images/brand/hero-wide.jpg" srcset="/static/images/brand/hero-wide-1200.jpg 1200w, /static/images/brand/hero-wide.jpg 2400w" sizes="100vw" width="2400" height="923" alt="">
+    </picture>
+</section>
+<div class="Caption-row wrap">
+    <p class="Fig"><span class="Fig-n">Fig. 1</span>Fluid flowing past a cylinder at Reynolds number 160 sheds a K&aacute;rm&aacute;n vortex street. From a lattice-Boltzmann simulation.</p>
 </div>
 
-<section class="Intro">
-    <div class="Intro-text">
-        <p class="Intro-kicker">Math competitions are focused on abstract tricks.</p>
-        <h2>Math modeling teaches solutions to the <i>real world</i>.</h2>
-        <p>
-            We'll show you how to apply tons of unique techniques, many of which you'd never
-            learn in high school. We also compete in a few competitions, including the
-            $100,000 prize pool M3 challenge.
-            Keep your eyes peeled for our own one coming soon, M&sup2; :)
-        </p>
+<section class="Record wrap" aria-labelledby="record-label">
+    <p class="Label" id="record-label">MathWorks Math Modeling Challenge</p>
+    {% include record.html %}
+</section>
+
+<section class="Section wrap" aria-labelledby="what-label">
+    <div class="Section-intro">
+        <p class="Label" id="what-label">What we do</p>
+        <h2 class="H2 H2--wide">Math competitions are about clever tricks.<br class="Br-wide"> Modeling is about the real world.</h2>
+        <p class="Lead">We learn techniques most students never see in high school, like regression, Markov chains, Monte Carlo and differential equations, then use them on open-ended problems with real data, on a deadline, as a team.</p>
     </div>
-    <div class="Intro-image">
-        <img src="/static/images/m3.jpg" alt="Our team at the M3 Challenge">
+    <div class="Cards">
+        <a class="Card" href="/activities/">
+            <h3>The M3 Challenge</h3>
+            <p>Our flagship contest: 14 hours to model a real problem from scratch. TJ teams won in 2023 and placed second in 2024.</p>
+            <span class="Card-more">Competitions</span>
+        </a>
+        <a class="Card" href="/lectures/">
+            <h3>8th-period lectures</h3>
+            <p>The tools, taught by members: regression, Markov chains, sensitivity analysis, paper writing and MATLAB.</p>
+            <span class="Card-more">Lecture archive</span>
+        </a>
+        <a class="Card" href="/tjm2/">
+            <h3>TJM&sup2;</h3>
+            <p>Our own one-day modeling competition for middle and high schoolers, on November 21.</p>
+            <span class="Card-more">Event details</span>
+        </a>
+        <a class="Card" href="/activities/">
+            <h3>More competitions</h3>
+            <p>HiMCM, SIMIODE and the Modeling the Future Challenge, plus in-house contests that feed team selection.</p>
+            <span class="Card-more">Activities</span>
+        </a>
+        <a class="Card" href="/potm/">
+            <h3>Problem of the Month</h3>
+            <p>A fresh modeling question each month. Write it up for practice and send it to us.</p>
+            <span class="Card-more">This month&rsquo;s problem</span>
+        </a>
+        <a class="Card" href="/activities/">
+            <h3>Talks</h3>
+            <p>Guest speakers on how modeling shows up in real research and jobs, like our talk on quantitative neuroscience.</p>
+            <span class="Card-more">Activities</span>
+        </a>
     </div>
 </section>
 
-<section class="Gallery">
-    <h2 class="Heading">follow our insta.</h2>
-    <div class="Gallery-grid">
-        {% for photo in site.data.gallery %}
-        <figure class="Gallery-item">
-            <img src="{{ photo.image }}" alt="{{ photo.caption }}">
-            <figcaption>{{ photo.caption }}</figcaption>
-        </figure>
-        {% endfor %}
-    </div>
-    <a class="Pill" href="{{ site.data.links.instagram }}">Follow @tjmmc</a>
-</section>
-
-<section class="Events">
-    <h2 class="Heading">upcoming dates.</h2>
-    {% for event in site.data.events %}
-    <div class="Event">
-        <div class="Event-date">
-            <span class="Event-month">{{ event.month }}</span>
-            <span class="Event-day">{{ event.day }}</span>
+<section class="Band" aria-labelledby="tjm2-title">
+    <div class="Band-inner wrap">
+        <div>
+            <p class="Label Label--onDark">Saturday, November 21, 2026 &middot; TJHSST</p>
+            <h2 class="Band-title" id="tjm2-title">TJM<sup>2</sup></h2>
+            <p class="Band-lead">A free, one-day math modeling competition for middle and high school students. Teams get a real problem at 9&nbsp;a.m., build a model by afternoon, and the best defend theirs to judges that evening.</p>
+            <ul class="Band-facts">
+                <li><b>6&ndash;12</b>grades</li>
+                <li><b>3&ndash;5</b>per team</li>
+                <li><b>$2,000+</b>in prizes</li>
+                <li><b>Free</b>food included</li>
+            </ul>
+            <div class="Actions">
+                <a class="Btn Btn--light" href="{{ links.interest_form }}">Sign up for updates</a>
+                <a class="Btn Btn--outline-light" href="/tjm2/">Event details</a>
+            </div>
         </div>
-        <div class="Event-info">
-            {% if event.link %}<h3><a href="{{ event.link }}">{{ event.name }}</a></h3>{% else %}<h3>{{ event.name }}</h3>{% endif %}
-            {% if event.note %}<p>{{ event.note }}</p>{% endif %}
-        </div>
-    </div>
-    {% endfor %}
-    <div class="Events-actions">
-        <a class="Pill" href="{{ site.data.links.discord }}">Join Our Discord</a>
-        <a class="Pill" href="/activities/">See All Activities</a>
+        <aside class="Band-aside">
+            <p class="Label Label--onDark">For sponsors</p>
+            <h3>Help keep it free.</h3>
+            <p>TJM&sup2; is student-run, with no school funding behind it. Sponsorships start at $500, and in-kind gifts count.</p>
+            <p><a href="{{ links.sponsor_packet }}">Sponsorship packet (PDF)</a> &nbsp;&middot;&nbsp; <a href="/tjm2/#sponsor">Tiers</a></p>
+        </aside>
     </div>
 </section>
 
-<section class="Partners">
-    <h2 class="Heading">our partners.</h2>
-    <div class="Partners-grid">
-        {% for partner in site.data.partners %}
-        {% if partner.claim %}
-        <div class="Partner Partner--claim">
-            <p>claim your spot here</p>
-            <a href="mailto:{{ site.data.links.email }}?subject=Partnering%20with%20TJMMC">get in touch</a>
+<section class="Section wrap" id="press" aria-labelledby="press-label">
+    <div class="Section-head">
+        <div>
+            <p class="Label" id="press-label">In the news</p>
+            <h2 class="H2">Covered by FOX 5 DC, WUSA9, WTOP and Patch.</h2>
         </div>
-        {% else %}
-        <div class="Partner">
-            {% if partner.logo %}<img src="{{ partner.logo }}" alt="{{ partner.name }}">{% endif %}
-            <p>{{ partner.name }}</p>
-            {% if partner.role %}<span>{{ partner.role }}</span>{% endif %}
-        </div>
-        {% endif %}
-        {% endfor %}
+        <a class="Link" href="/press/">All coverage</a>
+    </div>
+    {% include press-list.html home=true %}
+    <div class="Videos">
+        {% for v in site.data.videos %}{% if v.home %}{% include video.html v=v %}{% endif %}{% endfor %}
     </div>
 </section>
 
-<section class="Leadership">
-    <h2 class="Heading">our officers.</h2>
-    <div class="Leaders">
-        {% for leader in site.data.officers %}
-        <div class="PockerCard">
-            <img src="{{ leader.image }}" alt="{{ leader.name }}">
-            <p>{{ leader.name }} / {{ leader.role }}</p>
-        </div>
-        {% endfor %}
+<section class="Section wrap" id="photos" aria-labelledby="photos-label">
+    <p class="Label" id="photos-label">In photos</p>
+    <h2 class="H2">From the finals in New York to the atrium at TJ.</h2>
+    {% include photo-grid.html %}
+</section>
+
+<section class="Section wrap Split" aria-label="Upcoming dates and officers">
+    <div>
+        <p class="Label">Coming up</p>
+        <h2 class="H2">Dates</h2>
+        {% include events.html %}
+    </div>
+    <div>
+        <p class="Label">Who runs it</p>
+        <h2 class="H2">Officers</h2>
+        <ul class="Officers Officers--compact">
+            {% for o in site.data.officers %}
+            <li>
+                <div class="Officer-photo">{% if o.image %}<img src="{{ o.image }}" alt="" loading="lazy">{% else %}<span class="Officer-initials" aria-hidden="true">{{ o.name | remove: "Ms. " | remove: "Mr. " | remove: "Dr. " | slice: 0 }}</span>{% endif %}</div>
+                <p class="Officer-name">{{ o.name }}</p>
+                <p class="Officer-role">{{ o.role }}</p>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 </section>
 
-<section class="Carousel-section">
-    <h2 class="Heading">mmc in action.</h2>
-    <div class="Carousel" id="mmcCarousel">
-        <div class="Carousel-track" id="carouselTrack">
-            <div class="Carousel-slide"><img src="/static/images/carousel/mmc-1.jpeg" alt="MMC in action photo 1"></div>
-            <div class="Carousel-slide"><img src="/static/images/carousel/mmc-2.jpg" alt="MMC in action photo 2"></div>
-            <div class="Carousel-slide"><img src="/static/images/carousel/mmc-3.jpg" alt="MMC in action photo 3"></div>
-            <div class="Carousel-slide"><img src="/static/images/carousel/mmc-4.jpeg" alt="MMC in action photo 4"></div>
-            <div class="Carousel-slide"><img src="/static/images/carousel/mmc-5.jpg" alt="MMC in action photo 5"></div>
+<section class="Section wrap Split" id="join" aria-label="Get involved">
+    <div class="Panel">
+        <p class="Label">TJ students</p>
+        <h3>Join the club</h3>
+        <p>Sign up for our 8th-period activity on Ion, then join the Discord for announcements and questions. No experience needed.</p>
+        <div class="Actions">
+            <a class="Btn" href="{{ links.ion }}">Sign up on Ion</a>
+            <a class="Btn Btn--ghost" href="{{ links.discord }}">Join the Discord</a>
+            <a class="Btn Btn--ghost" href="{{ links.instagram }}">{{ links.instagram_handle }}</a>
         </div>
-        <div class="Carousel-dots" id="carouselDots">
-            <button class="Carousel-dot is-active" data-index="0" aria-label="Go to slide 1"></button>
-            <button class="Carousel-dot" data-index="1" aria-label="Go to slide 2"></button>
-            <button class="Carousel-dot" data-index="2" aria-label="Go to slide 3"></button>
-            <button class="Carousel-dot" data-index="3" aria-label="Go to slide 4"></button>
-            <button class="Carousel-dot" data-index="4" aria-label="Go to slide 5"></button>
+    </div>
+    <div class="Panel">
+        <p class="Label">Companies and organizations</p>
+        <h3>Partner with us</h3>
+        <p>Help us bring 150+ middle and high schoolers to TJ for a day of modeling this November. Tiers start at $500, and in-kind gifts count.</p>
+        <div class="Actions">
+            <a class="Btn" href="{{ links.sponsor_packet }}">Sponsorship packet (PDF)</a>
+            <a class="Btn Btn--ghost" href="mailto:{{ links.email }}?subject=Sponsoring%20TJM%C2%B2">Email us</a>
         </div>
+        {% include sponsors.html %}
     </div>
 </section>

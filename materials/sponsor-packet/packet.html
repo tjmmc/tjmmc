@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TJM² 2026 · Sponsorship</title>
+<!-- Edit the text below, then run `python3 materials/render.py` from the repo root.
+     It writes static/media/TJM2-2026-Sponsorship.pdf (tjmmc.org/u/sponsor). -->
+<link rel="stylesheet" href="../brand/tokens.css">
+<style>
+@page { size: 8.5in 11in; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #cfc9bf; }
+body { font-synthesis: none; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+       font-family: var(--sans); color: var(--ink); font-kerning: normal; }
+.page { position: relative; width: 8.5in; height: 11in; overflow: hidden; background: var(--paper);
+        padding: 0.5in 0.6in 0.45in; break-after: page; }
+.page:last-child { break-after: auto; }
+@media screen { .page { margin: 0.25in auto; box-shadow: 0 2px 18px rgba(0,0,0,.18); } }
+
+/* running header / footer */
+.runhead { display: flex; justify-content: space-between; align-items: baseline;
+           font-size: 6.6pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+           color: var(--ink-2); padding-bottom: 0.09in; border-bottom: 0.6pt solid var(--rule); }
+.runfoot { position: absolute; left: 0.6in; right: 0.6in; bottom: 0.38in; display: flex;
+           justify-content: space-between; align-items: center; font-size: 7pt; color: var(--ink-2); }
+.runfoot .mark { width: 0.62in; color: var(--ink); display: block; }
+.runfoot .mid { flex: 1; padding-left: 0.18in; letter-spacing: 0.02em; }
+.runfoot .pg { font-size: 7pt; color: var(--ink-3); font-feature-settings: "tnum"; }
+
+/* type */
+.label { font-size: 6.9pt; font-weight: 650; letter-spacing: 0.17em; text-transform: uppercase; color: var(--red); }
+.fig { font-family: var(--fig); font-style: italic; font-weight: 400; }   /* "Fig. N" labels only */
+.minor { font-size: 6.6pt; font-weight: 650; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3); }
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- page 1 ---------- */
+.title { display: grid; grid-template-columns: 1fr auto; align-items: end; margin-top: 0.22in; }
+.wordmark { font-size: 58pt; font-weight: 650; line-height: 0.82; letter-spacing: -0.01em;
+            transform: scaleX(1.06); transform-origin: left bottom; }
+.wordmark sup { font-size: 0.5em; vertical-align: 0; position: relative; top: -0.82em; margin-left: 0.02em; }
+.when { text-align: right; line-height: 1.32; padding-bottom: 0.02in; }
+.when .d { font-size: 11.5pt; font-weight: 600; }
+.when .p { font-size: 9pt; color: var(--ink-2); }
+.sub { font-size: 11.2pt; font-weight: 400; margin-top: 0.15in; color: var(--ink); letter-spacing: 0.002em; }
+
+.plate { position: relative; margin-top: 0.2in; height: 2.25in; background: var(--plate) url("../brand/art/vortex-band.jpg") center / cover no-repeat; }
+.vtitle { position: absolute; right: -0.31in; top: 0; transform-origin: right top; transform: rotate(-90deg) translateY(-100%);
+          white-space: nowrap; font-size: 7.6pt; font-weight: 550; letter-spacing: 0.24em; color: var(--red);
+          margin-right: 0; }
+
+.cap { margin-top: 0.14in; display: grid; grid-template-columns: 0.98in 1fr; row-gap: 0.035in; align-items: baseline; }
+.cap .fig { font-size: 11pt; color: var(--ink); }
+.cap .l1 { font-size: 10.4pt; font-weight: 550; transform: scaleX(1.05); transform-origin: left; }
+.cap .l2 { font-size: 8.4pt; color: var(--ink-2); }
+
+.body { display: grid; grid-template-columns: 1fr 2.05in; column-gap: 0.36in; margin-top: 0.26in; }
+.copy section + section { margin-top: 0.15in; }
+.copy p { font-size: 8.75pt; line-height: 1.46; margin-top: 0.05in; color: var(--ink); }
+.copy p.mission { font-size: 8.75pt; font-weight: 550; line-height: 1.46; margin-top: 0.08in; }
+
+.stats { border-left: 0.6pt solid var(--rule); padding-left: 0.24in; }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 0.14in; row-gap: 0.14in; padding-top: 0.02in; }
+.stat .n { font-size: 19pt; font-weight: 600; line-height: 1; letter-spacing: -0.01em; font-feature-settings: "tnum"; }
+.stat .t { font-size: 7.6pt; line-height: 1.35; color: var(--ink-2); margin-top: 0.05in; }
+.record { margin-top: 0.18in; padding-top: 0.12in; border-top: 0.6pt solid var(--rule); }
+.record .row { display: grid; grid-template-columns: 0.42in 1fr; padding: 0.045in 0; align-items: baseline; }
+.record .y { font-size: 8.4pt; font-weight: 600; font-feature-settings: "tnum"; color: var(--ink-2); }
+.record .r { font-size: 9.4pt; font-weight: 600; }
+.record .r span { display: block; font-size: 7.6pt; font-weight: 400; color: var(--ink-2); margin-top: 0.01in; }
+.press { margin-top: 0.14in; font-size: 7.4pt; line-height: 1.5; color: var(--ink-2); }
+.press b { font-weight: 600; color: var(--ink); }
+
+.budget { position: absolute; left: 0.6in; right: 0.6in; bottom: 0.84in; }
+.budget .head { display: flex; justify-content: space-between; align-items: baseline; }
+.budget .head .est { font-size: 7.6pt; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--ink-3); margin-left: 0.08in; }
+.budget .head .claim { font-size: 9pt; font-weight: 550; }
+.bar { display: flex; height: 0.2in; margin-top: 0.09in; }
+.bar div { height: 100%; }
+.legend { display: flex; margin-top: 0.07in; }
+.legend div { font-size: 7.2pt; color: var(--ink-2); line-height: 1.3; padding-right: 0.06in; }
+.legend b { display: block; font-weight: 600; color: var(--ink); font-feature-settings: "tnum"; }
+.c-food { background: var(--red); } .c-prize { background: var(--blue); } .c-shirt { background: var(--ink); }
+.c-venue { background: #8A8378; } .c-print { background: #C9BFAE; }
+
+/* ---------- page 2 ---------- */
+.p2title { display: flex; justify-content: space-between; align-items: baseline; margin-top: 0.24in; }
+.p2title h1 { margin: 0; font-size: 24pt; font-weight: 600; letter-spacing: -0.005em; transform: scaleX(1.05); transform-origin: left; }
+.p2title .note { font-size: 8.4pt; color: var(--ink-2); }
+.intro { font-size: 9pt; line-height: 1.45; color: var(--ink-2); margin-top: 0.08in; max-width: 6.2in; }
+.intro b { color: var(--ink); font-weight: 600; }
+
+table.tiers { width: 100%; border-collapse: collapse; margin-top: 0.16in; table-layout: fixed; }
+table.tiers col.lab { width: 3.42in; }
+table.tiers th, table.tiers td { padding: 0; }
+table.tiers thead th { text-align: center; vertical-align: bottom; padding: 0.1in 0.04in 0.1in; }
+table.tiers thead th .tn { font-size: 7.4pt; font-weight: 650; letter-spacing: 0.17em; text-transform: uppercase; }
+table.tiers thead th .tp { font-size: 15pt; font-weight: 600; margin-top: 0.03in; font-feature-settings: "tnum"; }
+table.tiers thead th .ts { font-size: 7.2pt; font-weight: 400; color: var(--ink-2); margin-top: 0.03in; }
+table.tiers tbody td { height: 0.228in; border-top: 0.5pt solid var(--rule); text-align: center; vertical-align: middle;
+                       font-size: 7.3pt; color: var(--ink-2); line-height: 1.15; }
+table.tiers tbody td.l { text-align: left; font-size: 8.15pt; color: var(--ink); padding-right: 0.12in; line-height: 1.25; }
+table.tiers tbody tr.grp td { height: auto; border-top: none; padding-top: 0.12in; padding-bottom: 0.035in; text-align: left; }
+.dot { display: inline-block; width: 0.072in; height: 0.072in; border-radius: 50%; background: var(--ink); }
+table.tiers .t { background: var(--plate); color: var(--cream); }
+table.tiers thead th.t .ts { color: #B9B0A0; }
+table.tiers tbody td.t { border-top-color: #34322f; color: var(--cream); }
+table.tiers tbody tr.grp td.t { background: var(--plate); }
+table.tiers .t .dot { background: var(--cream); }
+table.tiers tbody tr:last-child td.t { padding-bottom: 0.08in; }
+
+.tail { display: grid; grid-template-columns: 1fr 2.75in; column-gap: 0.36in; margin-top: 0.2in;
+        padding-top: 0.16in; border-top: 0.6pt solid var(--rule); }
+.notes { font-size: 7.5pt; line-height: 1.45; color: var(--ink-2); }
+.notes p + p { margin-top: 0.05in; }
+.notes b { color: var(--ink); font-weight: 600; }
+
+.contact { border-left: 0.6pt solid var(--rule); padding-left: 0.24in; }
+.contact .ask { font-size: 15pt; font-weight: 600; transform: scaleX(1.05); transform-origin: left; }
+.contact .who { font-size: 8pt; line-height: 1.5; color: var(--ink-2); margin-top: 0.07in; }
+</style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 ================= -->
+<div class="page">
+  <div class="runhead"><span>TJ Math Modeling Club &middot; Thomas Jefferson High School for Science and Technology</span><span>Sponsorship &middot; 2026</span></div>
+
+  <div class="title">
+    <div class="wordmark">TJM<sup>2</sup></div>
+    <div class="when"><div class="d">Saturday, November 21, 2026</div><div class="p">TJHSST &middot; Alexandria, Virginia</div></div>
+  </div>
+  <div class="sub">A one-day math modeling competition for DC-area middle and high schoolers.</div>
+
+  <div class="plate"><div class="vtitle">TJ MATH MODELING</div></div>
+  <div class="cap">
+    <span class="fig">Fig. 1</span><span class="l1">Will Northern Virginia&rsquo;s data centers outgrow the power grid?</span>
+    <span class="minor">Sample</span><span class="l2">Teams get a question like this at 9&nbsp;a.m. By evening, finalists defend their models before a panel of judges.</span>
+  </div>
+
+  <div class="body">
+    <div class="copy">
+      <section>
+        <div class="label">What is TJM&sup2;</div>
+        <p>TJM&sup2; is a free, one-day math modeling competition run by TJ students. Teams of three to five get an open-ended, real-world problem in the morning, build a model from real data, and write it up by afternoon; the strongest teams then present and defend their work. Our first edition aims to bring 150+ middle and high schoolers, with separate divisions and $2,000+ in prizes.</p>
+      </section>
+      <section>
+        <div class="label">Who we are</div>
+        <p>The TJ Math Modeling Club turns messy, real-world questions into math. Our teams won the MathWorks Math Modeling (M3) Challenge in 2023, first of about 650 teams, placed second in 2024, and reached the top six in 2026. Our members have also reached national olympiad camps (MOP and USACO Camp) and done research at MIT PRIMES and RSI.</p>
+      </section>
+      <section>
+        <div class="label">Why we need you</div>
+        <p>TJM&sup2; is entirely student-run, with no FCPS or school funding behind it. Every dollar goes to participants: food, prizes, T-shirts, printing, and the custodial staff who open the building on a Saturday. Sponsors keep it free, which lets us reach students whose schools have no math team at all.</p>
+        <p class="mission">Applied math gave many of us our start. We want every student in Northern Virginia to get that chance, whatever school they attend and whatever their family can afford.</p>
+      </section>
+    </div>
+
+    <aside class="stats">
+      <div class="stat-grid">
+        <div class="stat"><div class="n">150+</div><div class="t">students, our goal</div></div>
+        <div class="stat"><div class="n">6&ndash;12</div><div class="t">grades, in two divisions</div></div>
+        <div class="stat"><div class="n">$2k+</div><div class="t">in prizes</div></div>
+        <div class="stat"><div class="n">$0</div><div class="t">to enter</div></div>
+      </div>
+      <div class="record">
+        <div class="label">M3 Challenge</div>
+        <div class="row"><div class="y">2023</div><div class="r">Champion<span>1st of ~650 teams</span></div></div>
+        <div class="row"><div class="y">2024</div><div class="r">Runner-up<span>2nd of 655</span></div></div>
+        <div class="row"><div class="y">2026</div><div class="r">Finalist<span>top 6 of 770</span></div></div>
+      </div>
+      <div class="press">Featured on <b>FOX 5 DC</b>, <b>WUSA9</b> and <b>WTOP</b></div>
+    </aside>
+  </div>
+
+  <div class="budget">
+    <div class="head"><div class="label">Where your money goes<span class="est">estimated budget, ~$9,700</span></div><div class="claim">About $65 per student without sponsors. Free with you.</div></div>
+    <div class="bar">
+      <div class="c-food" style="flex: 3600"></div><div class="c-prize" style="flex: 2000"></div><div class="c-shirt" style="flex: 1600"></div><div class="c-venue" style="flex: 1200"></div><div class="c-print" style="flex: 1300"></div>
+    </div>
+    <div class="legend">
+      <div style="flex: 3600"><b>$3,600</b>Food: lunch, dinner, snacks</div>
+      <div style="flex: 2000"><b>$2,000</b>Prizes</div>
+      <div style="flex: 1600"><b>$1,600</b>Event T-shirts</div>
+      <div style="flex: 1200"><b>$1,200</b>Building &amp; custodial</div>
+      <div style="flex: 1300"><b>$1,300</b>Printing, supplies, reserve</div>
+    </div>
+  </div>
+
+  <div class="runfoot"><img class="mark" src="../brand/art/fig1-mark.svg" alt=""><span class="mid"><a href="https://tjmmc.org/tjm2/">tjmmc.org/tjm2</a> &nbsp;&middot;&nbsp; <a href="mailto:officers@tjmmc.org">officers@tjmmc.org</a></span><span class="pg">1 / 2</span></div>
+</div>
+
+<!-- ================= PAGE 2 ================= -->
+<div class="page">
+  <div class="runhead"><span>TJ Math Modeling Club &middot; Thomas Jefferson High School for Science and Technology</span><span>Sponsorship &middot; 2026</span></div>
+
+  <div class="p2title"><h1>Sponsorship tiers</h1><span class="note">Benefits are cumulative.</span></div>
+  <p class="intro">Every dollar goes to the students in the room. Sponsors who commit by <b>Friday, October 30</b> appear on the shirts and every printed piece.</p>
+
+  <table class="tiers">
+    <colgroup><col class="lab"><col><col><col><col></colgroup>
+    <thead><tr>
+      <th></th>
+      <th><div class="tn">Bronze</div><div class="tp">$500</div><div class="ts">unlimited</div></th>
+      <th><div class="tn">Silver</div><div class="tp">$1,000</div><div class="ts">8 slots</div></th>
+      <th><div class="tn">Gold</div><div class="tp">$2,500</div><div class="ts">3 slots</div></th>
+      <th class="t"><div class="tn">Title</div><div class="tp">$5,000</div><div class="ts">1 slot, exclusive</div></th>
+    </tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="4"><span class="minor">Visibility</span></td><td class="t"></td></tr>
+      <tr><td class="l">Logo on event website and ceremony slides</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td>larger</td><td class="t">largest</td></tr>
+      <tr><td class="l">Listed as a 2026 founding sponsor</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="t"><span class="dot"></span></td></tr>
+      <tr><td class="l">Thank-you on Instagram, Discord and newsletter</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td>own post</td><td class="t">own post</td></tr>
+      <tr><td class="l">Logo on T-shirts and problem packets</td><td></td><td><span class="dot"></span></td><td>larger</td><td class="t">largest</td></tr>
+      <tr><td class="l">&ldquo;TJM&sup2; presented by [you]&rdquo; on everything</td><td></td><td></td><td></td><td class="t"><span class="dot"></span></td></tr>
+
+      <tr class="grp"><td colspan="4"><span class="minor">Reaching participants</span></td><td class="t"></td></tr>
+      <tr><td class="l">We distribute your swag or prizes</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="t"><span class="dot"></span></td></tr>
+      <tr><td class="l">Flyer or coupon in every participant bag</td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="t"><span class="dot"></span></td></tr>
+      <tr><td class="l">Officers and members wear your merch at the event</td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="t"><span class="dot"></span></td></tr>
+      <tr><td class="l">Section in our pre-event participant email</td><td></td><td></td><td><span class="dot"></span></td><td class="t"><span class="dot"></span></td></tr>
+      <tr><td class="l">One of your programs shared with every participant&dagger;</td><td></td><td></td><td><span class="dot"></span></td><td class="t"><span class="dot"></span></td></tr>
+
+      <tr class="grp"><td colspan="4"><span class="minor">At the event</span></td><td class="t"></td></tr>
+      <tr><td class="l">A named award, such as &ldquo;The [You] Prize for Creativity&rdquo;</td><td></td><td></td><td><span class="dot"></span></td><td class="t">Grand Prize</td></tr>
+      <tr><td class="l">Sponsor table, promoted in our announcements</td><td></td><td></td><td><span class="dot"></span></td><td class="t"><span class="dot"></span></td></tr>
+      <tr><td class="l">Host a side event during judging, like an Estimathon</td><td></td><td></td><td><span class="dot"></span></td><td class="t"><span class="dot"></span></td></tr>
+      <tr><td class="l">Guest judge seats</td><td></td><td></td><td>1</td><td class="t">2</td></tr>
+      <tr><td class="l">5-minute opening remarks and your banner at the venue</td><td></td><td></td><td></td><td class="t"><span class="dot"></span></td></tr>
+
+      <tr class="grp"><td colspan="4"><span class="minor">Beyond the day</span></td><td class="t"></td></tr>
+      <tr><td class="l">8th-period talk to TJ students, in person or virtual</td><td></td><td></td><td><span class="dot"></span></td><td class="t"><span class="dot"></span></td></tr>
+      <tr><td class="l">Post-event report</td><td>summary</td><td>full report*</td><td>full report*</td><td class="t">full report*</td></tr>
+      <tr><td class="l">First right of renewal for 2027</td><td></td><td></td><td></td><td class="t"><span class="dot"></span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="tail">
+    <div class="notes">
+      <p>* <b>Full report:</b> attendance, schools and grades represented, photos, and everywhere your name appeared. The summary covers attendance and photos.</p>
+      <p>&dagger; <b>Programs:</b> a program, scholarship or internship of yours, shared by email and at the event.</p>
+      <p><b>In-kind gifts</b> (prizes, course credits, software licenses, food) count toward a tier at retail value.</p>
+      <p><b>Logos:</b> a vector file (SVG, EPS or PDF) by October 30. <b>Payment:</b> details and any paperwork your team needs, on request.</p>
+    </div>
+    <div class="contact">
+      <div class="ask">Let&rsquo;s talk.</div>
+      <div class="who">Something else in mind? We&rsquo;ll build a package around it.</div>
+      <div class="who">Charlie Wang, Vice President<br><a href="mailto:officers@tjmmc.org">officers@tjmmc.org</a> &nbsp;&middot;&nbsp; <a href="https://tjmmc.org/tjm2/">tjmmc.org/tjm2</a></div>
+      <div class="who">Faculty sponsor: Ms. Sewon Yang</div>
+    </div>
+  </div>
+
+  <div class="runfoot"><img class="mark" src="../brand/art/fig1-mark.svg" alt=""><span class="mid">TJ Math Modeling Club &nbsp;&middot;&nbsp; 6560 Braddock Road, Alexandria, VA 22312</span><span class="pg">2 / 2</span></div>
+</div>
+
+</body>
+</html>

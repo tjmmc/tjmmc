@@ -1,0 +1,21 @@
+{%- comment -%}
+Redirect pages. Front matter takes either
+  redirect_to: /some/path/     (a fixed path), or
+  link_key: flier              (a key in _data/links.yml, so the target lives in one place).
+{%- endcomment -%}
+{%- assign to = page.redirect_to -%}
+{%- if page.link_key -%}{%- assign to = site.data.links[page.link_key] -%}{%- endif -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting · TJ Math Modeling</title>
+    <meta name="robots" content="noindex">
+    <meta http-equiv="refresh" content="0; url={{ to }}">
+    <link rel="canonical" href="{{ site.url }}{{ to }}">
+    <script>location.replace({{ to | jsonify }});</script>
+</head>
+<body>
+    <p>Redirecting to <a href="{{ to }}">{{ site.url }}{{ to }}</a>.</p>
+</body>
+</html>

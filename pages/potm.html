@@ -1,27 +1,33 @@
 ---
 layout: default
-title: Problem of the Month | TJ Math Modeling
+title: Problem of the Month · TJ Math Modeling
+description: The TJ Math Modeling Club's monthly modeling problem. Write it up for practice and send us your paper.
 permalink: /potm/
 nav: potm
 ---
-<section class="Page">
-    <h1 class="Page-title">Problem of the Month</h1>
+<section class="Page-head wrap">
+    <p class="Label">Problem of the Month</p>
+    <h1 class="Page-title">This month&rsquo;s problem</h1>
+    <p class="Page-lead">A modeling problem we (try to) update monthly. Send us your solution for practice writing papers.</p>
+</section>
 
-    <h2 class="Heading">about.</h2>
-    <p class="Page-body">Our problem that we (try to) update monthly. Let us know your solutions for practice writing papers!</p>
+<section class="wrap">
+    <div class="Sample" style="margin-top: 36px;">
+        <p class="Label">The problem</p>
+        <p>How would you model an epidemiological outbreak&rsquo;s economic effects on a secluded population? Imagine SARS hit a remote tribe. How would it affect trade and finances between communities? Describe how you would model parts of a regional economy using factors like individual economic participation, goods production, and whatever else you think matters. If you want to build a model and simulate it with parameters, include that too!</p>
+    </div>
 
-    <h2 class="Heading">this month's problem.</h2>
-    <p class="Page-body">How would you model an epidemiological outbreak's economic effects on a secluded population? Imagine if SARS hit a remote tribe. How would it affect trade and inter-community finances? Describe how one would model given aspects of a regional economy by utilizing factors such as individual economic participation, goods production, and whatever you think sounds cool. If you want to build and simulate a model on parameters, include that too!</p>
-
-    <h2 class="Heading">submit your paper by October 1.</h2>
-    <p class="Page-body">Email us at the club officers (<a href="mailto:{{ site.data.links.email }}">{{ site.data.links.email }}</a>), or <a href="https://forms.gle/EdqZYHedNF9sNe118">fill out this form</a> and paste the pdf.</p>
-    <a class="Pill" href="mailto:{{ site.data.links.email }}?subject=Problem%20of%20the%20Month%20Submission">Send Us Your Paper</a>
+    <h2 class="Heading">Submit your paper by October 1</h2>
+    <p class="Page-body">Email the club officers at <a href="mailto:{{ site.data.links.email }}">{{ site.data.links.email }}</a>, or <a href="https://forms.gle/EdqZYHedNF9sNe118">fill out this form</a> and paste in the PDF.</p>
+    <div class="Pills">
+        <a class="Pill" href="mailto:{{ site.data.links.email }}?subject=Problem%20of%20the%20Month%20Submission">Send us your paper</a>
+    </div>
 
     {% if site.data.potm %}
-    <h2 class="Heading">past problems.</h2>
+    <h2 class="Heading">Past problems</h2>
     <div class="Pills">
         {% for problem in site.data.potm %}
-        <a class="Pill" href="{{ problem.link }}">{{ problem.name }}</a>
+        <a class="Pill Btn--ghost" href="{{ problem.link }}">{{ problem.name }}</a>
         {% endfor %}
     </div>
     {% endif %}

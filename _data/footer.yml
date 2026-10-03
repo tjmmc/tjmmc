@@ -1,9 +1,9 @@
-# Links shown on the right side of the footer.
-- name: Contact Us
-  link: "mailto:tjmathhunt@gmail.com"   # FILL: club or officer contact email
-- name: Github
-  link: "https://github.com/tjmmc"
-- name: Follow our Insta!
-  link: "https://www.instagram.com/tj_mmc/" # FILL: e.g. Ion club page or activities page
-- name: Sign up on Ion!
+# Links in the footer's "Elsewhere" column.
+- name: Instagram
+  link: "https://www.instagram.com/tj_mmc/"
+- name: Discord
+  link: "https://discord.gg/pmkGspS2z"
+- name: Sign up on Ion
   link: "https://ion.tjhsst.edu/eighth/activity/3295"
+- name: GitHub
+  link: "https://github.com/tjmmc"
