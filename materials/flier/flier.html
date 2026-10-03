@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TJM² 2026 · Flier</title>
+<!-- Edit the text below, then run `python3 materials/render.py` from the repo root.
+     It writes static/media/TJM2-2026-Flier.pdf (tjmmc.org/u/flier). The QR code points at
+     https://tjmmc.org/tjm2/; see materials/README.md to regenerate it. -->
+<link rel="stylesheet" href="../brand/tokens.css">
+<style>
+@page { size: 8.5in 11in; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #cfc9bf; }
+body { font-synthesis: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-family: var(--sans); color: var(--ink); font-kerning: normal; }
+.page { position: relative; width: 8.5in; height: 11in; overflow: hidden; background: var(--paper); padding: 0.45in 0.55in 0.4in; }
+@media screen { .page { margin: 0.25in auto; box-shadow: 0 2px 18px rgba(0,0,0,.18); } }
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+.sample a { text-decoration: underline; text-decoration-thickness: 0.5pt; text-underline-offset: 1.5pt; }
+.fig { font-family: var(--fig); font-style: italic; font-weight: 400; }   /* "Fig. N" labels only */
+.label { font-size: 7pt; font-weight: 650; letter-spacing: 0.17em; text-transform: uppercase; color: var(--red); }
+.minor { font-size: 6.6pt; font-weight: 650; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-3); }
+
+/* hero plate: title on the black, art band (edges feathered into the same black) below */
+.plate { position: relative; height: 3.76in; background: var(--plate) url("../brand/art/vortex-band-soft.jpg") center bottom / 100% auto no-repeat; color: var(--cream); }
+.plate .wm { position: absolute; left: 0.32in; top: 0.24in; font-size: 66pt; font-weight: 650; line-height: 0.82; letter-spacing: -0.01em;
+             transform: scaleX(1.06); transform-origin: left top; }
+.plate .wm sup { font-size: 0.5em; vertical-align: 0; position: relative; top: -0.8em; margin-left: 0.02em; }
+.plate .tag { position: absolute; left: 0.34in; top: 1.05in; font-size: 11pt; font-weight: 450; line-height: 1.3; color: var(--cream); opacity: 0.9; white-space: nowrap; }
+.plate .date { position: absolute; right: 0.34in; top: 0.3in; text-align: right; line-height: 1.25; }
+.plate .date .d1 { font-size: 10pt; font-weight: 650; letter-spacing: 0.18em; text-transform: uppercase; color: #E0625A; }
+.plate .date .d2 { font-size: 22pt; font-weight: 600; letter-spacing: -0.005em; }
+.plate .date .d3 { font-size: 9.6pt; font-weight: 400; opacity: 0.85; margin-top: 0.02in; }
+
+.cap { margin-top: 0.12in; display: grid; grid-template-columns: 0.82in 1fr; row-gap: 0.03in; align-items: baseline; }
+.cap .fig { font-size: 11pt; }
+.cap .l1 { font-size: 10.6pt; font-weight: 550; transform: scaleX(1.05); transform-origin: left; }
+.cap .l2 { font-size: 8.4pt; color: var(--ink-2); }
+
+.facts { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 0.15in; border-top: 0.6pt solid var(--ink); border-bottom: 0.6pt solid var(--rule); }
+.facts > div { padding: 0.08in 0.04in 0.08in 0; }
+.facts > div + div { padding-left: 0.14in; border-left: 0.6pt solid var(--rule); }
+.facts .n { font-size: 17pt; font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; }
+.facts .t { font-size: 7.8pt; color: var(--ink-2); margin-top: 0.03in; }
+.facts .free .n { color: var(--red); }
+
+.cols { display: grid; grid-template-columns: 1.1fr 1fr 0.84fr; column-gap: 0.26in; margin-top: 0.16in; }
+.cols .label { margin-bottom: 0.06in; }
+ol.steps { list-style: none; margin: 0; padding: 0; counter-reset: s; }
+ol.steps li { position: relative; padding-left: 0.26in; font-size: 8.1pt; line-height: 1.38; color: var(--ink-2); margin-top: 0.06in; counter-increment: s; }
+ol.steps li::before { content: counter(s); position: absolute; left: 0; top: -0.01in; font-size: 11pt; font-weight: 600; color: var(--ink); }
+ol.steps li b { display: block; color: var(--ink); font-weight: 600; font-size: 8.9pt; }
+.ai { margin-top: 0.1in; padding-top: 0.08in; border-top: 0.6pt solid var(--rule); font-size: 8pt; line-height: 1.42; color: var(--ink-2); }
+.ai b { color: var(--ink); font-weight: 600; }
+ul.why { list-style: none; margin: 0; padding: 0; }
+ul.why li { position: relative; padding-left: 0.15in; font-size: 8.1pt; line-height: 1.38; color: var(--ink-2); margin-top: 0.05in; }
+ul.why li::before { content: ""; position: absolute; left: 0; top: 0.06in; width: 0.055in; height: 0.055in; border-radius: 50%; background: var(--red); }
+ul.why li b { color: var(--ink); font-weight: 600; }
+table.sched { border-collapse: collapse; width: 100%; }
+table.sched td { font-size: 8.1pt; padding: 0.025in 0; vertical-align: baseline; line-height: 1.3; }
+table.sched td.tm { width: 0.48in; font-weight: 600; font-feature-settings: "tnum"; color: var(--ink); }
+table.sched td.ev { color: var(--ink-2); }
+table.sched tr.key td { color: var(--ink); font-weight: 600; }
+.sched-note { font-size: 7.4pt; color: var(--ink-3); margin-top: 0.05in; }
+
+.sample { margin-top: 0.15in; background: var(--paper-2); padding: 0.11in 0.18in 0.1in; display: grid; grid-template-columns: 1.15in 1fr; column-gap: 0.18in; }
+.sample .head .sub { display: block; font-size: 7.4pt; color: var(--ink-3); margin-top: 0.04in; }
+.sample p { font-size: 8.1pt; line-height: 1.45; color: var(--ink-2); }
+.sample p b { color: var(--ink); font-weight: 600; }
+.sample p.data { margin-top: 0.05in; font-size: 7.4pt; color: var(--ink-3); }
+.sample a { color: inherit; }
+
+.signup { position: absolute; left: 0.55in; right: 0.55in; bottom: 0.38in; display: grid; grid-template-columns: 0.86in 1fr auto; column-gap: 0.2in; align-items: center;
+          border-top: 0.6pt solid var(--ink); padding-top: 0.12in; }
+.signup img.qr { width: 0.86in; height: 0.86in; display: block; }
+.signup .go { font-size: 17pt; font-weight: 600; letter-spacing: -0.005em; transform: scaleX(1.05); transform-origin: left; }
+.signup .url { font-size: 11pt; font-weight: 600; color: var(--red); margin-top: 0.02in; }
+.signup .small { font-size: 8pt; color: var(--ink-2); line-height: 1.45; margin-top: 0.04in; }
+.signup .host { text-align: right; font-size: 8pt; line-height: 1.5; color: var(--ink-2); }
+.signup .host b { color: var(--ink); font-weight: 600; }
+.signup .host img { width: 0.62in; display: block; margin: 0 0 0.05in auto; }
+.signup .host .rec { font-size: 7.6pt; color: var(--ink-2); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="plate">
+    <div class="wm">TJM<sup>2</sup></div>
+    <div class="tag">A one-day math modeling competition for middle and high school students</div>
+    <div class="date"><div class="d1">Saturday</div><div class="d2">Nov 21, 2026</div><div class="d3">TJHSST, Alexandria</div></div>
+  </div>
+  <div class="cap">
+    <span class="fig">Fig. 1</span><span class="l1">Will Northern Virginia&rsquo;s data centers outgrow the power grid?</span>
+    <span class="minor">Sample</span><span class="l2">The real problem is revealed at 9&nbsp;a.m. on competition day.</span>
+  </div>
+
+  <div class="facts">
+    <div><div class="n">1 day</div><div class="t">8 a.m. to 7 p.m.</div></div>
+    <div><div class="n">6&ndash;12</div><div class="t">grades, two divisions</div></div>
+    <div><div class="n">3&ndash;5</div><div class="t">per team, or come solo</div></div>
+    <div><div class="n">$2,000+</div><div class="t">in prizes</div></div>
+    <div class="free"><div class="n">Free</div><div class="t">food included</div></div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="label">How it works</div>
+      <ol class="steps">
+        <li><b>Get the problem.</b>Open-ended, built on real data, with no single right answer.</li>
+        <li><b>Build a model with your team.</b>Math, code, spreadsheets: whatever works. Papers are due mid-afternoon.</li>
+        <li><b>Defend it.</b>Finalists present to judges; awards and raffles close the night.</li>
+      </ol>
+      <div class="ai"><b>AI policy.</b> Use AI to find models and write code. Judges score how well you can justify every decision.</div>
+    </div>
+    <div>
+      <div class="label">Why come</div>
+      <ul class="why">
+        <li><b>$2,000+ in prizes</b>, swag for every team that turns in a paper, and raffles.</li>
+        <li><b>A day out with friends</b>, with free lunch, dinner and snacks.</li>
+        <li><b>No experience needed.</b> We teach the basics that morning and answer questions on our Discord.</li>
+        <li><b>TJ students:</b> top performers are considered for our M3 Challenge team.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">Schedule</div>
+      <table class="sched">
+        <tr><td class="tm">8:00</td><td class="ev">Check-in, breakfast</td></tr>
+        <tr><td class="tm">8:45</td><td class="ev">Opening ceremony</td></tr>
+        <tr class="key"><td class="tm">9:00</td><td class="ev">Problem released</td></tr>
+        <tr><td class="tm">12:00</td><td class="ev">Lunch</td></tr>
+        <tr class="key"><td class="tm">3:00</td><td class="ev">Papers due</td></tr>
+        <tr><td class="tm">3:15</td><td class="ev">Games while judges read</td></tr>
+        <tr><td class="tm">4:45</td><td class="ev">Finalist presentations</td></tr>
+        <tr><td class="tm">6:15</td><td class="ev">Dinner</td></tr>
+        <tr class="key"><td class="tm">6:30</td><td class="ev">Awards and raffle</td></tr>
+      </table>
+      <div class="sched-note">Tentative; details by email.</div>
+    </div>
+  </div>
+
+  <div class="sample">
+    <div class="head"><div class="label">Sample problem</div><span class="sub">Not this year&rsquo;s</span></div>
+    <div>
+      <p>Northern Virginia is the world&rsquo;s largest data-center market, and Dominion Energy projects its Virginia electricity load could roughly double within 15 years. <b>(1)</b> Model a data center&rsquo;s power draw across a year. <b>(2)</b> Forecast the region&rsquo;s demand 5&ndash;15 years out. Will it outgrow supply? Quantify your uncertainty. <b>(3)</b> Recommend where the next ones should go.</p>
+      <p class="data">Data provided: EIA Form 861 &middot; PJM load forecasts &middot; Dominion&rsquo;s Integrated Resource Plan &middot; JLARC data-center study (2024) &middot; Loudoun County GeoHub. See a winning paper: <a href="https://m3challenge.siam.org/wp-content/uploads/CHAMPIONTC-RUNNER-UP_16401.pdf">TJ&rsquo;s 2023 M3 Challenge champion</a>.</p>
+    </div>
+  </div>
+
+  <div class="signup">
+    <img class="qr" src="qr-tjm2.svg" alt="QR code for tjmmc.org/tjm2">
+    <div>
+      <div class="go">Sign up to hear more</div>
+      <div class="url"><a href="https://tjmmc.org/tjm2/">tjmmc.org/tjm2</a></div>
+      <div class="small">Non-binding. Coming solo? Sign up anyway and we&rsquo;ll match you with a team.<br>Questions: <a href="mailto:officers@tjmmc.org">officers@tjmmc.org</a></div>
+    </div>
+    <div class="host">
+      <img src="../brand/art/fig1-mark.svg" alt="">
+      Hosted by the <b>TJ Math Modeling Club</b><br>
+      <span class="rec">M3 Challenge champions, 2023 &middot; runners-up, 2024</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

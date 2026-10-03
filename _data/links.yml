@@ -6,6 +6,6 @@ instagram_handle: "@tj_mmc"
 github: "https://github.com/tjmmc"
 ion: "https://ion.tjhsst.edu/eighth/activity/3295"
 interest_form: "https://docs.google.com/forms/d/e/1FAIpQLScBG8RfI8hJFy3RWFqU7chaGVPxuGcQ4_gmD96ob8n8zxm56w/viewform"
-sponsor_packet: "/static/media/TJM2-2026-Sponsorship.pdf"
-flier: "/static/media/TJM2-2026-Flier.pdf"
+sponsor_packet: "/static/media/TJM2-2026-Sponsorship.pdf"   # also tjmmc.org/u/sponsor
+flier: "/static/media/TJM2-2026-Flier.pdf"   # tjmmc.org/u/flier; deliberately not linked on the site
 m3_champion_paper: "https://m3challenge.siam.org/wp-content/uploads/CHAMPIONTC-RUNNER-UP_16401.pdf"

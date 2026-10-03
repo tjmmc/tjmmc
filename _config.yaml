@@ -5,7 +5,14 @@ permalink: pretty
 plugins:
   - jekyll-sitemap
 exclude:
+  - materials          # print-material source (packet, flier); see materials/README.md
   - OLD-website
   - README.md
   - LICENSE
   - static/setup.md
+defaults:
+  # The flier is shared by link (tjmmc.org/u/flier), not listed on the site or in the sitemap.
+  - scope:
+      path: "static/media/TJM2-2026-Flier.pdf"
+    values:
+      sitemap: false

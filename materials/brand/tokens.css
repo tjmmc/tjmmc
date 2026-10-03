@@ -1,0 +1,29 @@
+/* TJ Math Modeling: shared design tokens for the print materials (sponsorship packet, flier).
+   Same look as the website and the 2026 shirt.
+   - Sora for everything.
+   - "Fig." labels only in Libre Baskerville Italic.
+   Fonts are bundled (both SIL Open Font License; see fonts/OFL-*.txt) so every machine renders
+   the same PDF. Sora is cut into static weights because Chrome embeds variable fonts in PDFs as
+   Type 3 outlines, which some viewers render poorly. Use only the weights 400 450 550 600 650. */
+
+@font-face { font-family: "Sora"; src: url("fonts/Sora-W400.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Sora"; src: url("fonts/Sora-W450.ttf") format("truetype"); font-weight: 450; font-style: normal; }
+@font-face { font-family: "Sora"; src: url("fonts/Sora-W550.ttf") format("truetype"); font-weight: 550; font-style: normal; }
+@font-face { font-family: "Sora"; src: url("fonts/Sora-W600.ttf") format("truetype"); font-weight: 600; font-style: normal; }
+@font-face { font-family: "Sora"; src: url("fonts/Sora-W650.ttf") format("truetype"); font-weight: 650; font-style: normal; }
+@font-face { font-family: "TJMMC Fig"; src: url("fonts/LibreBaskerville-Italic.ttf") format("truetype"); font-weight: 400; font-style: italic; }
+
+:root {
+  --paper: #F4EFE6;      /* warm paper */
+  --paper-2: #EBE4D7;    /* panels on paper */
+  --ink: #171717;
+  --ink-2: #4E4942;      /* secondary text */
+  --ink-3: #8A8378;      /* tertiary, captions */
+  --rule: #D3CABB;
+  --red: #D9463B;        /* type / accents on paper (the art's red is #E84034) */
+  --blue: #2E56DE;
+  --plate: #131314;      /* the black art plate */
+  --cream: #E8DEC8;      /* type on the plate (shirt v5 cream) */
+  --sans: "Sora", "Helvetica Neue", Arial, sans-serif;
+  --fig: "TJMMC Fig", "Libre Baskerville", Baskerville, Georgia, serif;   /* "Fig. N" labels only */
+}

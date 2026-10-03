@@ -4,7 +4,7 @@
 {%- for e in site.data.events %}
 {%- if e.date %}{% assign d = e.date | date: "%Y-%m-%d" %}{% if d < today %}{% continue %}{% endif %}{% endif %}
     <li class="Event"{% if e.date %} data-date="{{ e.date | date: '%Y-%m-%d' }}"{% endif %}>
-        <div class="Event-date">{% if e.date %}{{ e.date | date: "%b %-d" }}<small>{{ e.date | date: "%A" }}</small>{% else %}{{ e.tba }}<small>date TBA</small>{% endif %}</div>
+        <div class="Event-date">{% if e.date %}{{ e.date | date: "%b %-d" }}<small>{{ e.date | date: "%A" }}</small>{% else %}{{ e.tba }}<small>{{ e.tba_note | default: "date TBA" }}</small>{% endif %}</div>
         <div>
             <h3>{% if e.link %}<a href="{{ e.link }}">{{ e.name }}</a>{% else %}{{ e.name }}{% endif %}</h3>
             {% if e.note %}<p>{{ e.note }}</p>{% endif %}

@@ -22,10 +22,20 @@ Most updates are data edits; you don't need to touch any HTML.
 
 Page layouts live in `_layouts/default.html` and `pages/`, shared pieces in `_includes/`, and all styles in `static/css/styles.css`.
 
+## Print materials
+
+The TJM² sponsorship packet and flier are built from HTML in [`materials/`](materials/README.md) and rendered to `static/media/` with `python3 materials/render.py`.
+
+Short links for emails:
+- **tjmmc.org/u/sponsor:** the sponsorship packet.
+- **tjmmc.org/u/flier:** the flier, which is deliberately not linked anywhere on the site.
+
+Their targets are set in `_data/links.yml`.
+
 ## Design
 
 The site shares the club's brand with the 2026 shirt, sponsorship packet and TJM² flier:
-- **Type:** Sora for type, Baskerville Italic for "Fig." captions.
+- **Type:** Sora for everything; an italic serif only for "Fig. N" labels.
 - **Colours:** warm paper, black art plates, and vortex red and blue as accents.
 - **Art:** the hero is a simulated Kármán vortex street (flow past a cylinder at Re = 160).
 
