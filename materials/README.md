@@ -42,6 +42,19 @@ These match the website and the 2026 shirt.
   python3 -c "import segno; segno.make('https://tjmmc.org/tjm2/', error='m').save('materials/flier/qr-tjm2.svg', scale=10, border=0, dark='#171717', light=None)"
   ```
   After regenerating, test the QR code with a phone camera.
+- `og/og.html` is the image that shows when someone shares a tjmmc.org link (`static/images/brand/og.jpg`, 1200 × 630). It names the TJM² date. To regenerate it from the repo root (on Windows or Linux, use your Chrome path):
+  ```
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 --allow-file-access-from-files --screenshot=og.png "file://$PWD/materials/og/og.html"
+  python3 -c "from PIL import Image; Image.open('og.png').convert('RGB').save('static/images/brand/og.jpg', quality=88, optimize=True, progressive=True)"
+  ```
+
+## If the TJM² date changes
+
+The date appears in the packet, the flier, `og/og.html`, `_data/events.yml` and several pages. The packet and the TJM² page also give the shirt-logo deadline, three weeks before the event. To find every mention, search for the current date in each of its forms:
+```
+grep -rnE "November 14|Nov 14|2026-11-14|October 23" --include='*.html' --include='*.yml' . | grep -v OLD-website
+```
+Then re-render the PDFs and the link-preview image.
 
 ## Next year
 
