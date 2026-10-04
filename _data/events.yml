@@ -5,7 +5,7 @@
 #   tba_note: "after TJM²"  (optional small line under tba; defaults to "date TBA")
 #   note, link: optional
 - name: TJM&sup2;
-  date: 2026-11-21
+  date: 2026-11-14
   note: Our own math modeling competition for middle and high schoolers. Free, with $2,000+ in prizes.
   link: /tjm2/
 - name: "Speaker: quantitative finance"
