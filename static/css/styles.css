@@ -287,10 +287,12 @@ a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
 .Schedule td:first-child { width: 72px; font-weight: 650; font-variant-numeric: tabular-nums; }
 .Schedule td:last-child { color: var(--ink-2); }
 .Schedule tr.is-key td:last-child { color: var(--ink); font-weight: 600; }
+.Pdf { display: block; width: 100%; height: min(85vh, 1100px); margin-top: 20px; border: 1px solid var(--rule); background: #fff; }
 .Perks { list-style: none; padding: 0; margin: 18px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; }
 .Perks li { position: relative; padding-left: 20px; color: var(--ink-2); }
 .Perks li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
 .Perks b, .Perks strong { color: var(--ink); }
+.Perks--one { grid-template-columns: 1fr; }
 .Sample { background: var(--paper-2); padding: clamp(24px, 3.5vw, 40px); border-radius: 3px; }
 .Sample p:not(.Label) { color: var(--ink-2); margin-top: 12px; max-width: 80ch; }
 .Sample p.muted { font-size: 14px; color: var(--ink-3); }
@@ -397,6 +399,7 @@ main:has(> .Band:last-child) { padding-bottom: 0; }  /* a black band sits flush 
     .Tiers > div:nth-child(3) { border-left: 0; padding-left: 0; }
 }
 @media (max-width: 640px) {
+    .Pdf { display: none; }   /* phone browsers show embedded PDFs badly; the button stays */
     body { font-size: 15.5px; }
     .Hero-art { margin-top: 12px; }
     .Record-list { grid-template-columns: 1fr; }
