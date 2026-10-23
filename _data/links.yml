@@ -9,3 +9,7 @@ interest_form: "https://docs.google.com/forms/d/e/1FAIpQLScBG8RfI8hJFy3RWFqU7cha
 sponsor_packet: "/static/media/TJM2-2026-Sponsorship.pdf"   # also tjmmc.org/u/sponsor
 flier: "/static/media/TJM2-2026-Flier.pdf"   # tjmmc.org/u/flier; deliberately not linked on the site
 m3_champion_paper: "https://m3challenge.siam.org/wp-content/uploads/CHAMPIONTC-RUNNER-UP_16401.pdf"
+# HiMCM 2026 tryouts (tjmmc.org/u/himcm26 -> /himcm/2026/). Paste the Google Form link into himcm26_form.
+himcm26: "/himcm/2026/"
+himcm26_packet: "/static/media/HiMCM-2026-Tryouts.pdf"
+himcm26_form: ""

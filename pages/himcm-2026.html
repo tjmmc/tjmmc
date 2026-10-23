@@ -1,0 +1,91 @@
+---
+layout: default
+title: HiMCM 2026 tryouts · TJ Math Modeling
+description: Try out for TJ's HiMCM teams. Pick one of two modeling problems and submit a three-page paper by Wednesday, October 28, 2026.
+permalink: /himcm/2026/
+nav: activities
+sitemap: false
+---
+{%- comment -%}
+HiMCM 2026 tryout page (short link tjmmc.org/u/himcm26). The packet PDF and the
+submission form link live in _data/links.yml (himcm26_packet, himcm26_form).
+{%- endcomment -%}
+{% assign links = site.data.links %}
+<section class="Page-head wrap">
+    <p class="Label">HiMCM 2026 tryouts</p>
+    <h1 class="Page-title">Try out for HiMCM</h1>
+    <p class="Page-lead">Write a short modeling paper on one of two problems. Officers read every paper and form TJ&rsquo;s teams for HiMCM, which runs November 4&ndash;17.</p>
+</section>
+
+<div class="wrap">
+    <div class="Facts">
+        <div><b class="is-red">Oct 28</b><span>due Wednesday, 11:59 p.m.</span></div>
+        <div><b>2</b><span>problems, pick one</span></div>
+        <div><b>3 pages</b><span>plus an appendix</span></div>
+        <div><b>1&ndash;4</b><span>solo or as a group</span></div>
+        <div><b>Nov 4&ndash;17</b><span>the HiMCM contest</span></div>
+    </div>
+</div>
+
+<section class="Section wrap">
+    <h2 class="Heading">Submit by Wednesday, October 28, 11:59 p.m.</h2>
+    <p class="Page-body">Submit your paper as a PDF through the tryout form, with your problem number (1 or 2) at the top. Trying out as a group of up to four? Submit one paper with everyone&rsquo;s names on it. Officers may reshuffle groups when forming the HiMCM teams.</p>
+    <div class="Actions">
+        {% if links.himcm26_form != "" %}<a class="Btn" href="{{ links.himcm26_form }}">Submit your paper</a>{% endif %}
+        <a class="Btn{% if links.himcm26_form != "" %} Btn--ghost{% endif %}" href="{{ links.himcm26_packet }}">Download the packet (PDF)</a>
+    </div>
+    {% if links.himcm26_form == "" %}<p class="Note">The submission form link will be posted here and on our <a href="{{ links.discord }}">Discord</a>.</p>{% endif %}
+</section>
+
+<section class="Section wrap">
+    <p class="Label">The problems</p>
+    <h2 class="H2">Pick one</h2>
+    <div class="Sample">
+        <p class="Label">Problem 1 &middot; Data centers in Loudoun County</p>
+        <p>What will be the total energy consumption over the next 10 years of the data centers in Loudoun County?</p>
+    </div>
+    <div class="Sample" style="margin-top: 14px;">
+        <p class="Label">Problem 2 &middot; Spotted lanternflies</p>
+        <p>What will be the predicted damage to the tree ecosystem in Northern Virginia due to spotted lanternflies over the next 20 years?</p>
+    </div>
+    <p class="Page-body">The full problem statements and starter sources are in the packet.</p>
+</section>
+
+<section class="Section wrap Split">
+    <div>
+        <p class="Label">What a strong paper does</p>
+        <ol class="Steps">
+            <li><b>Defines the problem.</b>Who&rsquo;s affected, what data matters, and what each variable means.</li>
+            <li><b>States and justifies its assumptions.</b>The ones that make the problem solvable.</li>
+            <li><b>Explains the model and why.</b>The best-justified model wins, not the fanciest.</li>
+            <li><b>Analyzes the results.</b>Including a sensitivity analysis: does it hold at 5 or 50 years?</li>
+            <li><b>Weighs strengths and weaknesses.</b>What you&rsquo;d improve and what you traded off.</li>
+        </ol>
+    </div>
+    <div>
+        <p class="Label">Format</p>
+        <ul class="Perks Perks--one">
+            <li><b>Three pages</b> for the paper. The appendix doesn&rsquo;t count: put your code, data and sources there.</li>
+            <li><b>Using an AI model?</b> Include your prompts in the appendix.</li>
+            <li><b>Graphs and tables</b> help. Judges love a clear visual.</li>
+            <li><b>See an example:</b> <a href="https://docs.google.com/document/d/1TU1w1VT2SkmOsNvLABWx5aqh36C7IUSvRa8O6VScyXE/edit?usp=sharing">a 2023 TJMMC paper</a>.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="Section wrap">
+    <p class="Label">The contest</p>
+    <h2 class="H2">About HiMCM</h2>
+    <p class="Page-body">COMAP&rsquo;s <a href="https://comap.org/contests/himcm-midmcm">High School Mathematical Contest in Modeling</a> runs November 4&ndash;17, 2026. Teams of up to four students pick one problem and work on it within a 14-day window, and the club&rsquo;s faculty advisor registers TJ&rsquo;s teams. Questions? Ask on <a href="{{ links.discord }}">Discord</a> or email <a href="mailto:{{ links.email }}">{{ links.email }}</a>.</p>
+</section>
+
+<section class="Section wrap">
+    <p class="Label">The packet</p>
+    <h2 class="H2">Tryout problems &amp; guidelines</h2>
+    <object class="Pdf" data="{{ links.himcm26_packet }}#navpanes=0&amp;view=FitH" type="application/pdf" aria-label="HiMCM 2026 tryout packet">
+        <p class="Page-body">Your browser can&rsquo;t show the PDF here. <a href="{{ links.himcm26_packet }}">Download the packet</a>.</p>
+    </object>
+    <div class="Actions">
+        <a class="Btn Btn--ghost" href="{{ links.himcm26_packet }}">Open the packet (PDF)</a>
+    </div>
+</section>

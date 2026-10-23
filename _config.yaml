@@ -16,3 +16,8 @@ defaults:
       path: "static/media/TJM2-2026-Flier.pdf"
     values:
       sitemap: false
+  # HiMCM tryout packet: shared by link (tjmmc.org/u/himcm26).
+  - scope:
+      path: "static/media/HiMCM-2026-Tryouts.pdf"
+    values:
+      sitemap: false
