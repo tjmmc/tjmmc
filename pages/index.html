@@ -6,6 +6,12 @@ permalink: /
 nav: home
 ---
 {% assign links = site.data.links %}
+{%- comment -%} HiMCM 2026 tryout banner. Delete this block after Oct 28. {%- endcomment -%}
+{% if links.himcm26_form != "" %}
+<div class="Notice">
+    <p class="Notice-inner wrap"><b>HiMCM tryouts are due Wed, Oct 28, 11:59 p.m.</b> <span><a href="{{ links.himcm26_form }}">Submit your paper</a> &middot; <a href="{{ links.himcm26 }}">Read the problems</a></span></p>
+</div>
+{% endif %}
 <section class="Hero">
     <div class="Hero-inner wrap">
         <p class="Hero-kicker">Thomas Jefferson High School for Science and Technology</p>
@@ -21,19 +27,10 @@ nav: home
         <img src="/static/images/brand/hero-wide.jpg" srcset="/static/images/brand/hero-wide-1200.jpg 1200w, /static/images/brand/hero-wide.jpg 2400w" sizes="100vw" width="2400" height="923" alt="">
     </picture>
 </section>
-<div class="Caption-row wrap">
-    <p class="Fig"><span class="Fig-n">Fig. 1</span>Fluid flowing past a cylinder at Reynolds number 160 sheds a K&aacute;rm&aacute;n vortex street. From a lattice-Boltzmann simulation.</p>
-</div>
 
-<section class="Record wrap" aria-labelledby="record-label">
-    <p class="Label" id="record-label">MathWorks Math Modeling Challenge</p>
-    {% include record.html %}
-</section>
-
-<section class="Section wrap" aria-labelledby="what-label">
+<section class="Section wrap" aria-labelledby="what-title">
     <div class="Section-intro">
-        <p class="Label" id="what-label">What we do</p>
-        <h2 class="H2 H2--wide">Math competitions are about clever tricks.<br class="Br-wide"> Modeling is about the real world.</h2>
+        <h2 class="H2 H2--wide" id="what-title">Math competitions are about clever tricks.<br class="Br-wide"> Modeling is about the real world.</h2>
         <p class="Lead">We learn techniques most students never see in high school, like regression, Markov chains, Monte Carlo and differential equations, then use them on open-ended problems with real data, on a deadline, as a team.</p>
     </div>
     <div class="Cards">
@@ -68,6 +65,10 @@ nav: home
             <span class="Card-more">Activities</span>
         </a>
     </div>
+    <div class="Record">
+        <p class="Label" id="record-label">MathWorks Math Modeling Challenge</p>
+        {% include record.html %}
+    </div>
 </section>
 
 <section class="Band" aria-labelledby="tjm2-title">
@@ -96,11 +97,10 @@ nav: home
     </div>
 </section>
 
-<section class="Section wrap" id="press" aria-labelledby="press-label">
+<section class="Section wrap" id="press" aria-labelledby="press-title">
     <div class="Section-head">
         <div>
-            <p class="Label" id="press-label">In the news</p>
-            <h2 class="H2">Covered by FOX 5 DC, WUSA9, WTOP and Patch.</h2>
+            <h2 class="H2" id="press-title">Covered by FOX 5 DC, WUSA9, WTOP and Patch.</h2>
         </div>
         <a class="Link" href="/press/">All coverage</a>
     </div>
@@ -112,18 +112,15 @@ nav: home
 
 <section class="Section wrap" id="photos" aria-labelledby="photos-label">
     <p class="Label" id="photos-label">In photos</p>
-    <h2 class="H2">From the finals in New York to the atrium at TJ.</h2>
     {% include photo-grid.html %}
 </section>
 
 <section class="Section wrap Split" aria-label="Upcoming dates and officers">
     <div>
-        <p class="Label">Coming up</p>
         <h2 class="H2">Dates</h2>
         {% include events.html %}
     </div>
     <div>
-        <p class="Label">Who runs it</p>
         <h2 class="H2">Officers</h2>
         <ul class="Officers Officers--compact">
             {% for o in site.data.officers %}

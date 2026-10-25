@@ -1,0 +1,47 @@
+---
+layout: null
+permalink: /lab/
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>MMC Lab</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('mmclab:theme');
+                if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="/static/lab/vendor/katex.min.css">
+    <link rel="stylesheet" href="/static/lab/lab.css">
+</head>
+<body>
+    <div class="lab">
+        <header class="lab-header">
+            <div class="lab-brand">MMC Lab<span class="lab-muted" id="lab-brand-team"></span></div>
+            <div class="lab-header-right">
+                <button type="button" class="lab-link" id="lab-signout" hidden>Sign out</button>
+                <button type="button" class="lab-icon" id="lab-theme" aria-label="Toggle dark mode"></button>
+            </div>
+        </header>
+        <main class="lab-main" id="lab-main"></main>
+        <div class="lab-route" id="lab-route"></div>
+    </div>
+    <noscript><p style="text-align:center">MMC Lab needs JavaScript.</p></noscript>
+    <script src="/static/lab/vendor/marked.umd.js"></script>
+    <script src="/static/lab/vendor/purify.min.js"></script>
+    <script src="/static/lab/vendor/katex.min.js"></script>
+    <script src="/static/lab/config.js"></script>
+    <script src="/static/lab/lab.js"></script>
+</body>
+</html>

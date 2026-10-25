@@ -2,7 +2,7 @@
    TJ Math Modeling Club
    Shares the club's brand (shirt, sponsor packet, TJM² flier): Sora for type,
    Baskerville Italic for "Fig." captions, warm paper, a black art plate, and
-   vortex red/blue as accents. Plain CSS, no build step.
+   vortex red/blue kept to the art. Plain CSS, no build step.
    ========================================================================== */
 
 :root {
@@ -50,7 +50,7 @@ body {
 img, video, svg { max-width: 100%; display: block; }
 p { margin: 0; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:hover { color: var(--red-ink); }
+a:hover { color: var(--ink); text-decoration-thickness: 2px; }
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
 h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.15; letter-spacing: -0.012em; }
 sup { font-size: 0.5em; line-height: 0; vertical-align: 0; position: relative; top: -0.85em; margin-left: 0.03em; }
@@ -62,10 +62,10 @@ sup { font-size: 0.5em; line-height: 0; vertical-align: 0; position: relative; t
 /* small caps label, the system's section marker */
 .Label {
     font-size: 12px; font-weight: 650; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--red-ink); line-height: 1.4;
+    color: var(--ink); line-height: 1.4;
 }
 .Label .muted { letter-spacing: 0; text-transform: none; font-weight: 400; font-size: 13px; color: var(--ink-3); margin-left: 6px; }
-.Label--onDark { color: var(--title-red); }
+.Label--onDark { color: var(--cream-2); }
 
 /* "Fig." captions in Baskerville Italic */
 .Fig { font-size: 15px; line-height: 1.5; color: var(--ink-2); }
@@ -85,7 +85,7 @@ sup { font-size: 0.5em; line-height: 0; vertical-align: 0; position: relative; t
     background: var(--ink); color: var(--paper); text-decoration: none; cursor: pointer;
     transition: background-color .15s, color .15s, border-color .15s;
 }
-.Btn:hover, .Pill:hover { background: var(--red-ink); border-color: var(--red-ink); color: #fff; }
+.Btn:hover, .Pill:hover { background: var(--ink-2); border-color: var(--ink-2); color: var(--paper); }
 .Btn--ghost { background: transparent; color: var(--ink); }
 .Btn--ghost:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .Btn--light { background: var(--cream); border-color: var(--cream); color: var(--plate); }
@@ -107,7 +107,7 @@ sup { font-size: 0.5em; line-height: 0; vertical-align: 0; position: relative; t
 .Navlinks { display: flex; align-items: center; gap: 26px; }
 .Navlinks a { font-size: 15px; font-weight: 500; text-decoration: none; color: var(--ink-2); padding: 6px 0; }
 .Navlinks a:hover { color: var(--ink); }
-.Navlinks a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--red); }
+.Navlinks a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--ink); }
 .Navlinks .Nav-cta { color: var(--ink); border: 1.5px solid var(--ink); border-radius: 999px; padding: 8px 16px; font-weight: 600; }
 .Navlinks .Nav-cta:hover { background: var(--ink); color: var(--paper); }
 .Nav-toggle { display: none; width: 44px; height: 44px; border: 0; background: none; padding: 10px; cursor: pointer; }
@@ -115,10 +115,17 @@ sup { font-size: 0.5em; line-height: 0; vertical-align: 0; position: relative; t
 .Nav-toggle[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
 .Nav-toggle[aria-expanded="true"] span:last-child { transform: translateY(-4px) rotate(-45deg); }
 
+/* one-line announcement above the hero */
+.Notice { background: var(--paper-2); color: var(--ink); border-bottom: 1px solid var(--rule); font-size: 15px; line-height: 1.45; }
+.Notice-inner { display: flex; flex-wrap: wrap; gap: 4px 14px; padding-top: 11px; padding-bottom: 11px; }
+.Notice b { font-weight: 600; }
+.Notice a { color: var(--ink); font-weight: 600; }
+.Notice a:hover { color: var(--ink); text-decoration-thickness: 2px; }
+
 /* ---------- hero: the black plate ---------- */
 .Hero { background: var(--plate); color: var(--cream); overflow: hidden; }
 .Hero-inner { padding-top: clamp(44px, 7vw, 88px); position: relative; z-index: 1; }
-.Hero-kicker { font-size: 12px; font-weight: 650; letter-spacing: 0.18em; text-transform: uppercase; color: var(--title-red); }
+.Hero-kicker { font-size: 12px; font-weight: 650; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-2); }
 .Hero-title {
     font-size: clamp(48px, 8.2vw, 108px); font-weight: 650; letter-spacing: -0.025em; line-height: 0.95;
     margin-top: 18px; color: var(--cream);
@@ -135,7 +142,7 @@ sup { font-size: 0.5em; line-height: 0; vertical-align: 0; position: relative; t
 .Record-list > li + li { border-left: 1px solid var(--rule); }
 .Record-list a, .Record-list .Record-cell { display: block; padding: 18px 18px 20px; text-decoration: none; height: 100%; }
 .Record-list > li:first-child a { padding-left: 0; }
-.Record-list a:hover .Record-result { color: var(--red-ink); }
+.Record-list a:hover .Record-result { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .Record-year { display: block; font-size: 14px; font-weight: 600; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .Record-result { display: block; font-size: clamp(22px, 2.4vw, 30px); font-weight: 650; letter-spacing: -0.015em; line-height: 1.2; margin-top: 4px; }
 .Record-detail { display: block; font-size: 14px; color: var(--ink-2); margin-top: 6px; }
@@ -152,7 +159,7 @@ sup { font-size: 0.5em; line-height: 0; vertical-align: 0; position: relative; t
 .Card h3 { font-size: 20px; letter-spacing: -0.01em; }
 .Card p { color: var(--ink-2); margin-top: 8px; font-size: 15px; }
 .Card-more { display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule-strong); text-underline-offset: 3px; }
-a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
+a.Card:hover h3, a.Card:hover .Card-more { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 
 /* TJM² band (dark) */
 .Band { background: var(--plate); color: var(--cream); margin-top: var(--section); }
@@ -177,7 +184,7 @@ a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
 .Press-outlet { font-weight: 650; font-size: 15px; }
 .Press-kind { display: block; font-size: 11px; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
 .Press-title { font-size: 16px; color: var(--ink); }
-.Press a:hover .Press-title { color: var(--red-ink); text-decoration: underline; text-decoration-thickness: 1px; }
+.Press a:hover .Press-title { text-decoration: underline; text-decoration-thickness: 1px; }
 .Press-date { color: var(--ink-3); text-align: right; font-size: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
 /* videos: a thumbnail first; the YouTube player loads only on click */
@@ -191,7 +198,7 @@ a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
               background: rgba(19, 19, 20, .82); border: 1.5px solid var(--cream); }
 .Video-play::after { content: ""; position: absolute; left: 25px; top: 19px; border-style: solid; border-width: 12px 0 12px 19px;
                      border-color: transparent transparent transparent var(--cream); }
-.Video-frame:hover .Video-play { background: var(--red); border-color: var(--red); }
+.Video-frame:hover .Video-play { background: var(--ink); border-color: var(--ink); }
 .Video figcaption { margin-top: 12px; }
 .Video-meta { display: block; font-size: 12px; font-weight: 650; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 2px; }
 
@@ -214,7 +221,7 @@ a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
 .Event-date small { display: block; font-weight: 400; font-size: 13px; color: var(--ink-3); margin-top: 2px; }
 .Event h3 { font-size: 19px; }
 .Event h3 a { text-decoration: none; }
-.Event h3 a:hover { color: var(--red-ink); text-decoration: underline; }
+.Event h3 a:hover { text-decoration: underline; }
 .Event p { color: var(--ink-2); margin-top: 4px; font-size: 15px; }
 
 /* officers */
@@ -234,7 +241,7 @@ a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
 .Panel h3 { font-size: 26px; margin-top: 10px; }
 .Panel p:not(.Label) { color: var(--ink-2); margin-top: 10px; max-width: 46ch; }
 .Panel a:not(.Btn) { color: var(--ink); text-decoration-color: var(--rule-strong); }
-.Panel a:not(.Btn):hover { color: var(--red-ink); }
+.Panel a:not(.Btn):hover { text-decoration-thickness: 2px; }
 .Panel .Actions { margin-top: 22px; }
 
 /* sponsors (once there are any) */
@@ -248,7 +255,7 @@ a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
 .Page-lead { font-size: 19px; color: var(--ink-2); max-width: 56ch; margin-top: 18px; }
 .Page-body { color: var(--ink-2); margin-top: 12px; max-width: 68ch; }
 .Page-body a, .Row a:not(.Btn):not(.Pill), .Faq a { color: var(--ink); text-decoration-color: var(--rule-strong); }
-.Page-body a:hover, .Row a:not(.Btn):not(.Pill):hover, .Faq a:hover { color: var(--red-ink); text-decoration-color: currentColor; }
+.Page-body a:hover, .Row a:not(.Btn):not(.Pill):hover, .Faq a:hover { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
 .Heading { font-size: 24px; margin-top: 44px; }
 
 .Rows { margin-top: 28px; border-top: 1.5px solid var(--ink); }
@@ -265,7 +272,7 @@ a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
 .Box-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
 .Box:hover .Box-thumb img { transform: scale(1.03); }
 .Box h3 { font-size: 16px; font-weight: 600; line-height: 1.35; margin-top: 12px; letter-spacing: -0.005em; }
-.Box:hover h3 { color: var(--red-ink); }
+.Box:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 
 /* TJM² page */
 .Facts { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1.5px solid var(--ink); border-bottom: 1px solid var(--rule); margin-top: 32px; }
@@ -274,7 +281,6 @@ a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
 .Facts > div + div { border-left: 1px solid var(--rule); }
 .Facts b { display: block; font-size: clamp(22px, 2.6vw, 30px); font-weight: 650; letter-spacing: -0.015em; line-height: 1.15; }
 .Facts span { color: var(--ink-2); font-size: 14px; }
-.Facts .is-red { color: var(--red); }
 .Steps { list-style: none; padding: 0; margin: 18px 0 0; counter-reset: s; }
 .Steps li { counter-increment: s; position: relative; padding-left: 40px; margin-top: 18px; color: var(--ink-2); }
 .Steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; font-size: 22px; font-weight: 650; color: var(--ink); }
@@ -290,7 +296,7 @@ a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
 .Pdf { display: block; width: 100%; height: min(85vh, 1100px); margin-top: 20px; border: 1px solid var(--rule); background: #fff; }
 .Perks { list-style: none; padding: 0; margin: 18px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 40px; }
 .Perks li { position: relative; padding-left: 20px; color: var(--ink-2); }
-.Perks li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--red); }
+.Perks li::before { content: ""; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
 .Perks b, .Perks strong { color: var(--ink); }
 .Perks--one { grid-template-columns: 1fr; }
 .Sample { background: var(--paper-2); padding: clamp(24px, 3.5vw, 40px); border-radius: 3px; }
@@ -306,7 +312,7 @@ a.Card:hover h3, a.Card:hover .Card-more { color: var(--red-ink); }
 .Tiers > div + div { padding-left: 16px; border-left: 1px solid #36332f; }
 .Tiers span { display: block; font-size: 12px; font-weight: 650; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-2); }
 .Tiers b { display: block; font-size: clamp(24px, 3vw, 34px); font-weight: 650; letter-spacing: -0.015em; margin-top: 4px; color: var(--cream); }
-.Tiers .is-title span { color: var(--title-red); }
+.Tiers .is-title span { color: var(--cream); }
 
 /* ---------- footer ---------- */
 main { flex: 1 0 auto; padding-bottom: var(--section); }
@@ -316,7 +322,7 @@ main:has(> .Band:last-child) { padding-bottom: 0; }  /* a black band sits flush 
 .Footer-mark { width: 120px; color: var(--cream); display: block; }
 .Footer-name { color: var(--cream); font-weight: 650; font-size: 17px; margin-top: 18px; }
 .Footer-addr { font-size: 14px; margin-top: 6px; line-height: 1.55; }
-.Footer-head { font-size: 12px; font-weight: 650; letter-spacing: 0.16em; text-transform: uppercase; color: var(--title-red); }
+.Footer-head { font-size: 12px; font-weight: 650; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-2); }
 .Footer ul { list-style: none; padding: 0; margin: 12px 0 0; }
 .Footer li { margin-top: 6px; }
 .Footer a { color: var(--cream); text-decoration: none; font-size: 15px; }
@@ -388,7 +394,7 @@ main:has(> .Band:last-child) { padding-bottom: 0; }  /* a black band sits flush 
                 background: var(--paper); border-bottom: 1px solid var(--rule); padding: 8px var(--gutter) 20px; }
     .Navlinks.open { display: flex; }
     .Navlinks a { padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 17px; }
-    .Navlinks a[aria-current="page"] { box-shadow: none; color: var(--red-ink); }
+    .Navlinks a[aria-current="page"] { box-shadow: none; color: var(--ink); font-weight: 650; }
     .Navlinks .Nav-cta { margin-top: 16px; text-align: center; border-bottom: 1.5px solid var(--ink); }
     .Split { grid-template-columns: 1fr; }
     .Press a { grid-template-columns: 1fr auto; gap: 4px 16px; }

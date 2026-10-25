@@ -23,19 +23,25 @@
 - src: /static/images/photos/m3-checks-2023-2024.jpg
   caption: "Back at TJ: the 2023 champion check and the 2024 runner-up check."
   alt: "Two giant M3 Challenge checks on display, for $20,000 and $15,000"
+  size: wide
 - src: /static/images/photos/m3-finals-terrace.jpg
   small: /static/images/photos/m3-finals-terrace-800.jpg
   caption: "All of the finalist teams on the terrace at the M3 Challenge finals in New York."
   alt: "A large group of students in business attire on a rooftop terrace in New York"
+  size: wide
 - src: /static/images/photos/club.jpg
   small: /static/images/photos/club-800.jpg
   caption: "Club members at TJ."
   alt: "About forty students posing together in the TJHSST atrium"
+  size: wide
 - src: /static/images/photos/club-2022-23.jpg
   small: /static/images/photos/club-2022-23-800.jpg
   caption: "The 2022&ndash;23 club."
   alt: "A group of students posing in a classroom, some wearing holiday hats"
   size: wide
-- reserved: true
-  caption: "TJM&sup2; 2026. Photos from November 14 go here."
-  size: wide
+# TODO(TJM² photos): add photos from November 14 here. The empty slot below is
+# hidden until then; re-enable it (or replace it with real photos) and re-check
+# the sizes above so the last row stays full (rows are 12 columns: wide = 6, default = 4).
+# - reserved: true
+#   caption: "TJM&sup2; 2026. Photos from November 14 go here."
+#   size: wide

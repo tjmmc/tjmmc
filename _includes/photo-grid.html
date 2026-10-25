@@ -1,7 +1,7 @@
-{%- comment -%} Photo grid from _data/photos.yml. Fig. numbers start at 2 (the hero art is Fig. 1). {%- endcomment -%}
+{%- comment -%} Photo grid from _data/photos.yml. Fig. numbers start at 1. {%- endcomment -%}
 <div class="Photos">
 {%- for ph in site.data.photos %}
-{%- assign n = forloop.index | plus: 1 %}
+{%- assign n = forloop.index %}
 {%- if ph.reserved %}
     <figure class="Photo Photo--reserved{% if ph.size == 'wide' %} Photo--wide{% endif %}">
         <div class="Photo-frame"><div><b>TJM&sup2;</b>November 14, 2026</div></div>
