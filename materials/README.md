@@ -50,9 +50,9 @@ These match the website and the 2026 shirt.
 
 ## If the TJM² date changes
 
-The date appears in the packet, the flier, `og/og.html`, `_data/events.yml` and several pages. The packet and the TJM² page also give the shirt-logo deadline, three weeks before the event. To find every mention, search for the current date in each of its forms:
+The date appears in the packet, the flier, `og/og.html`, `_data/events.yml` and several pages. The packet and the TJM² page also give the shirt-logo deadline, three weeks before the event. To find every mention, search for the current wording in each of its forms:
 ```
-grep -rnE "November 14|Nov 14|2026-11-14|October 23" --include='*.html' --include='*.yml' . | grep -v OLD-website
+grep -rnE "February 2027|Feb 2027|three weeks before" --include='*.html' --include='*.yml' . | grep -v OLD-website
 ```
 Then re-render the PDFs and the link-preview image.
 
