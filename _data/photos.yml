@@ -39,9 +39,9 @@
   caption: "The 2022&ndash;23 club."
   alt: "A group of students posing in a classroom, some wearing holiday hats"
   size: wide
-# TODO(TJM² photos): add photos from November 14 here. The empty slot below is
+# TODO(TJM² photos): add photos from the day here. The empty slot below is
 # hidden until then; re-enable it (or replace it with real photos) and re-check
 # the sizes above so the last row stays full (rows are 12 columns: wide = 6, default = 4).
 # - reserved: true
-#   caption: "TJM&sup2; 2026. Photos from November 14 go here."
+#   caption: "TJM&sup2; 2026. Photos from the day go here."
 #   size: wide
